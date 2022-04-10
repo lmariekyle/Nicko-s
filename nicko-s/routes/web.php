@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoodCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,11 @@ Route::get('/', function () {
 Route::get('admin', function () {
     return view('dashboard');
 });
+
+//Food Category Route
+Route::get('admin/foodcategory/{id}/delete',[FoodCategoryController::class,'destroy']);
+Route::resource('admin/foodcategory',FoodCategoryController::class);
+// Route::get('foodcategory',[FoodCategoryController::class, 'index']);
+// Route::post('foodcategory',[FoodCategoryController::class, 'index']);
+// Route::put('foodcategory',[FoodCategoryController::class, 'index']);
+// Route::delete('foodcategory',[FoodCategoryController::class, 'index']);
