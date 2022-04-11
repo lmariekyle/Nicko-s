@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodCategoryController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -29,3 +30,7 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 // Route::post('foodcategory',[FoodCategoryController::class, 'index']);
 // Route::put('foodcategory',[FoodCategoryController::class, 'index']);
 // Route::delete('foodcategory',[FoodCategoryController::class, 'index']);
+
+//Food Route
+Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
+Route::resource('admin/food',FoodController::class);
