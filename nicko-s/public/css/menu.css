@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: rgb(214, 206, 147);
+    background: linear-gradient(90deg, rgba(214, 206, 147, 1) 55%, rgba(255, 255, 255, 1) 90%);
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 185px;
+    height: 435px;
+    margin-top: 75px;
+    margin-left: 35px;
+}
+
+.menu-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 60px;
+    background-color: #FCBF49;
+}
+
+.category-name {
+    font-family: 'Satisfy';
+    width: 185px;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 40px;
+}

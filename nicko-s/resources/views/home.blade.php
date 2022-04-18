@@ -4,8 +4,8 @@
         <title>Home Page</title>
         <link href="/css/home.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&family=Satisfy&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -13,7 +13,7 @@
             <nav>
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">MENU</a></li>
+                    <li><a href="{{url('menu')}}">MENU</a></li>
                     <li><a href="#">CATERING</a></li>
                 </ul>
                     <h2 class="logo">Nicko's</h2>
