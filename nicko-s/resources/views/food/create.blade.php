@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Add Food 
-                            <a href="{{url('admin/food')}}" class="float-right btn btn-success btn-sm">View All</a>
+                            <a href="{{url('admin/foods')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -22,20 +22,39 @@
                             <p class="text-success">{{session('success')}}</p>
                             @endif
                             <div class="table-responsive">
-                                <form method="post" action="{{url('admin/food')}}">
+                                <form method="post" enctype="multipart/form-data" action="{{url('admin/foods')}}">
                                 @csrf
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <tr>
+                                        <th>Select Food Category</th>
+                                        <td>
+                                            <select name="fc_id"class="form-control">
+                                                <option value="0">Select</option>
+                                                @foreach($foodcategory as $fc)
+                                                <option value="{{$fc->id}}">{{$fc->CategoryName}}</option>
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <th>Food Name</th>
                                         <td><input name="foodname" type="text" class="form-control"/></td>
                                     </tr>
                                     <tr>
-                                        <th>Description</th>
+                                        <th>Ingredients</th>
                                         <td><textarea name="ingredients" class="form-control"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <td><textarea name="description" class="form-control"></textarea></td>
                                     </tr>
                                     <tr>
                                         <th>Price</th>
                                         <td><textarea name="price" class="form-control"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Image</th>
+                                        <td><input name="image" id="image" type="file"/></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">

@@ -13,8 +13,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Add Food 
-                            <a href="{{url('admin/food')}}" class="float-right btn btn-success btn-sm">View All</a>
+                            <h6 class="m-0 font-weight-bold text-primary">{{$data->Name}} 
+                            <a href="{{url('admin/foods')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -32,14 +32,20 @@
                                         <td>{{$data->Ingredients}}</td>
                                     </tr>
                                     <tr>
+                                        <th>Description</th>
+                                        <td>{{$data->Description}}</td>
+                                    </tr>
+                                    <tr>
                                         <th>Price</th>
                                         <td>{{$data->Price}}</td>
                                     </tr>
-                                    <tr>
+                                    <th>Image</th>
+                                    <td><img src="{{asset('public/img/'.$data->image)}}" width="100"></td>
+                                    <!-- <tr>
                                         <td colspan="2">
                                          <input type="submit" class="btn btn-primary" />
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                                
                             </div>

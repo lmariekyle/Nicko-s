@@ -25,6 +25,8 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Select2 cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -64,12 +66,12 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link @if(!request()->is('admin/foodcategory*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Food Category</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse @if(request()->is('admin/foodcategory*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{url('admin/foodcategory/create')}}">Add New</a>
                         <a class="collapse-item" href="{{url('admin/foodcategory/')}}">View All</a>
@@ -78,21 +80,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#foodMaster"
+                <a class="nav-link @if(!request()->is('admin/foods*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#foodMaster"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-box"></i>
                     <span>Food</span>
                 </a>
-                <div id="foodMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="foodMaster" class="collapse @if(request()->is('admin/foods*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="blank.html">Blank Page</a>
-                        <a class="collapse-item" href="{{url('admin/food/create')}}">Add New</a>
-                        <a class="collapse-item" href="{{url('admin/food/')}}">View All</a>
-
+                        <a class="collapse-item" href="{{url('admin/foods/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/foods/')}}">View All</a>
                     </div>
                 </div>
             </li>
@@ -111,10 +107,6 @@
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
-
-
-
-
 
         </ul>
         <!-- End of Sidebar -->
@@ -385,7 +377,11 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+       
+
     @yield('scripts');
+
 </body>
 
 </html>

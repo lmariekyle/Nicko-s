@@ -19,6 +19,7 @@ use App\Http\Controllers\CateringController;
 */
 
 Route::get('/',[HomeController::class,'home']);
+Route::get('menu',[HomeController::class,'menu']);
 
 //Admin Dashboard
 Route::get('admin', function () {
@@ -40,8 +41,8 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 // Route::delete('foodcategory',[FoodCategoryController::class, 'index']);
 
 //Food Route
-Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
-Route::resource('admin/food',FoodController::class);
+Route::get('admin/foods/{id}/delete',[FoodController::class,'destroy']);
+Route::resource('admin/foods',FoodController::class);
 
 
 Route::get('catering', [CateringController::class, 'landing']);
