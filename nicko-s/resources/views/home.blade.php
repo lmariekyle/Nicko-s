@@ -13,8 +13,10 @@
             <nav>
                 <ul>
                     <li><a href="#">HOME</a></li>
+
                     <li><a href="{{url('menu')}}">MENU</a></li>
-                    <li><a href="#">CATERING</a></li>
+                    <li><a href="{{url('catering')}}">CATERING</a></li>
+
                 </ul>
                     <h2 class="logo">Nicko's</h2>
                     <h2 class="logo-1">Kitchen</h2>

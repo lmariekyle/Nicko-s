@@ -11,6 +11,12 @@
 
     <title>SB Admin 2 - Blank</title>
 
+    @if(!Session::has('adminData'))
+        <script type="text/javascript">
+            window.location.href="{{url('admin/login')}}";
+        </script>
+    @endif
+
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -87,20 +93,6 @@
                 </div>
             </li>
 
-            <!-- <li class="nav-item">
-                <a class="nav-link @if(!request()->is('admin/package*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#packagesMaster"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-box"></i>
-                    <span>Catering Packages</span>
-                </a>
-                <div id="packagesMaster" class="collapse @if(request()->is('admin/package*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{url('admin/package/create')}}">Add New</a>
-                        <a class="collapse-item" href="{{url('admin/package/')}}">View All</a>
-                    </div>
-                </div>
-            </li> -->
-
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -109,6 +101,12 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/logout')}}">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Logout</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->

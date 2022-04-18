@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+	font-family: 'Lato', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    background: #FCBF49;
+    overflow: hidden;
+}
+
+.image_bg{
+    position: absolute;
+    height: 100%;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    mix-blend-mode: soft-light;
+}
+
+main {
+    z-index: 2;
+    position: relative;
+    margin: auto;
+    width: 60%;
+    background: #FFEEEE;
+    padding: 2rem 4rem 0 4rem;
+    position: relative;
+    top: 10%;
+    height: 80%;
+    background: rgba(255, 238, 238, 0.8);
+    mix-blend-mode: normal;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+main .title {
+    text-align: center;
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 57px;
+    color: #BC6C25;
+}
+
+main .text-content {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: .9rem;
+    margin-top: 2rem;
+}
+
+main .button {
+    margin: 2rem auto;
+    background: #F4D35E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: 0;
+    font-family: 'Open Sans';
+    cursor: pointer;
+}
+
+/* Utility Classes */
+.mt-1 {
+    margin-top: 1rem;
+}
+.mt-2 {
+    margin-top: 2rem;
+}
+.mt-4 {
+    margin-top: 4rem;
+}
+.mt-6 {
+    margin-top: 6rem;
+}
+
+/* Event Form */
+
+
+/* event-type */
+.event-type {
+    margin-top: 2rem;
+    display: flex;
+}
+.event-type h2{
+    font-size: 1rem;
+}
+.event-type label {
+    display: block;
+    line-height:35px;
+    margin-right: 1.7rem;
+    margin-top: .5rem;
+}
+.event-date label:first-child {
+    margin-left: .4rem;
+}
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    transition: all 0.15s ease-out 0s;
+    /* background: #FFEEEE; */
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+}
+.option-input:hover {
+    background: #9faab7;
+}
+.option-input:checked {
+    background: #FCBF49;
+}
+.option-input:checked::before {
+    width: 35px;
+    height: 35px;
+    display:flex;
+    content: '\f00c';
+    font-size: 25px;
+    font-weight:bold;
+    position: absolute;
+    align-items:center;
+    justify-content:center;
+    font-family:'Font Awesome 5 Free';
+}
+.option-input:checked::after {
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+}
+
+/* event-date */
+.event-date {
+    margin-top: 2rem;
+}
+.event-date h2{
+    font-size: 1rem;
+}
+.event-date input {
+    margin-left: 5.5rem;
+}
+input[type="datetime-local"] {
+  color: #95a5a6;
+  font-family: sans-serif;
+  font-size: 1rem;
+  border: 1px solid #ecf0f1;
+  background: #ffff;
+  padding: 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+  border-radius: 5px;
+}
+
+/* event-venue */
+.event-venue {
+    margin-top: 2rem;
+}
+.event-venue h2{
+    font-size: 1rem;
+}
+
+.event-venue #address {
+    margin-left: 5.5rem;
+    width: 70%;
+}
+.event-venue #city {
+    margin-left: 5.5rem;
+}
+
+.event-venue input {
+    padding: 5px;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+}
+.event-venue label{
+    margin-right: 1.1rem;
+    margin-left: .2rem;
+}
+
+/* next/back button */
+.next {
+    position: fixed;
+    bottom: 10%;
+    right: 20%;
+    cursor: pointer;
+}
+.back {
+    position: fixed;
+    top: 13%;
+    left: 20%;
+    cursor: pointer;
+}
+.next:hover, .back:hover {
+    transform: scale(1.1);
+    transition: all 0.3s linear;
+}
+
+
+/* Choose Package */
+.subtitle {
+    color: grey;
+    font-size: .8rem;
+    font-style: italic;
+    text-align: center;
+    position: relative;
+    top: -.9rem;
+}
+
+#selections {
+    display: flex;
+    justify-content: space-evenly;
+}
+#selections label {
+    margin-right: 1rem;
+}
+#selections .selection {
+    background: #D6CE93;
+    padding: 2.2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: .6rem;
+    cursor: pointer;
+}
+.selection p{
+    line-height: 1.5rem;
+}
+
+#selections .price {
+    margin-top: .5rem;
+    text-align: center;
+    font-family: 'Satisfy';
+    color: #BC6C25;
+    font-size: 1.6rem;
+}
+#selections .package_head {
+    margin: 0 auto;
+    text-align: center;
+}
+#selections .package_name {
+    font-family: 'Satisfy';
+    color: #582F0E;
+    font-size: 1.3rem;
+}
+
+/* Package Details Page */
+
+#details_page {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#requests{
+    margin-top: 2rem;
+}
+#requests h2 {
+    color: #582F0E;
+    font-weight: lighter;
+}
+.req {
+    margin-top: 1.5rem;
+}
+.req textarea {
+    border-radius: 5px;
+    background: none;
+    border: 2px solid black;
+}
+.subtitle_detail {
+    color: grey;
+    font-size: .8rem;
+    font-style: italic;
+    text-align: left;
+}
+
+/* Summary Page */
+#summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+#summary_group {
+    margin-top: 1rem;
+}
+.summary_detail {
+    color: #582F0E;
+    margin-top: .5rem;
+}
+.summary_detail span {
+    margin-left: 5rem;
+}
+.summary_detail h2 {
+    margin-bottom: .5rem;
+}
+.summary_detail p span {
+    font-weight: bold;
+    color: black;
+}
+
+#summary_notes{
+    margin-top: 2rem;
+    text-align: center;
+}
+#summary_notes h2 {
+    color: #582F0E;
+    font-weight: lighter;
+    margin: .5rem 0;
+    font-size: 1.2rem;
+}
+#summary_notes .box {
+    max-width: 300px;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid black;
+    padding: .5rem;
+    font-size: .8   rem;
+}
