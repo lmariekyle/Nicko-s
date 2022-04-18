@@ -279,3 +279,75 @@ input[type="datetime-local"] {
     color: #582F0E;
     font-size: 1.3rem;
 }
+
+/* Package Details Page */
+
+#details_page {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#requests{
+    margin-top: 2rem;
+}
+#requests h2 {
+    color: #582F0E;
+    font-weight: lighter;
+}
+.req {
+    margin-top: 1.5rem;
+}
+.req textarea {
+    border-radius: 5px;
+    background: none;
+    border: 2px solid black;
+}
+.subtitle_detail {
+    color: grey;
+    font-size: .8rem;
+    font-style: italic;
+    text-align: left;
+}
+
+/* Summary Page */
+#summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+#summary_group {
+    margin-top: 1rem;
+}
+.summary_detail {
+    color: #582F0E;
+    margin-top: .5rem;
+}
+.summary_detail span {
+    margin-left: 5rem;
+}
+.summary_detail h2 {
+    margin-bottom: .5rem;
+}
+.summary_detail p span {
+    font-weight: bold;
+    color: black;
+}
+
+#summary_notes{
+    margin-top: 2rem;
+    text-align: center;
+}
+#summary_notes h2 {
+    color: #582F0E;
+    font-weight: lighter;
+    margin: .5rem 0;
+    font-size: 1.2rem;
+}
+#summary_notes .box {
+    max-width: 300px;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid black;
+    padding: .5rem;
+    font-size: .8   rem;
+}

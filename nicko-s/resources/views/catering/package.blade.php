@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catering | Event Form</title>
+    <title>Catering | Choose a Package</title>
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="/css/catering.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                     <label for="option2">
                         <div class="package_head">
                             <input type="radio" name="package" id="option2" class="option-input radio">
-                            <span class="package_name">Package One</span> 
+                            <span class="package_name">Package Two</span> 
                         </div>
                         <div class="selection">
                             <p>
@@ -68,7 +68,7 @@
                     <label for="option3">
                         <div class="package_head">
                             <input type="radio" name="package" id="option3" class="option-input radio">
-                            <span class="package_name">Package One</span> 
+                            <span class="package_name">Package Three</span> 
                         </div>
                         <div class="selection">
                             <p>
@@ -91,8 +91,10 @@
                 
                 
                 <div class="next">
-                    <span>Proceed</span>
-                    <span class="icon">&#x279C;</span>
+                    <a href="{{url('/catering/package_detail')}}">
+                        <span>Proceed</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             
             
