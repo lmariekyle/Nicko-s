@@ -62,14 +62,13 @@
                     <input type="text" id="zip" name="zip" placeholder="6000">
                     <label for="zip">Zip Code</label>
                 </div>
-                
-                <div class="next">
-                    <span>Proceed</span>
-                    <span class="icon">&#x279C;</span>
-                </div>
-            
-            
             </form>
+            <div class="next">
+                <a href="{{url('/catering/package')}}">
+                    <span>Proceed</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
         </main>
         <div class="image_bg">
             <img src="../img/catering_index.jpeg" alt="">

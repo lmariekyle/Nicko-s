@@ -44,6 +44,7 @@ main {
     mix-blend-mode: normal;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 main .title {
@@ -125,8 +126,7 @@ main .button {
     height: 35px;
     width: 35px;
     transition: all 0.15s ease-out 0s;
-    background: #FFEEEE;
-    border: none;
+    /* background: #FFEEEE; */
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -215,15 +215,67 @@ input[type="datetime-local"] {
     margin-left: .2rem;
 }
 
-/* next button */
+/* next/back button */
 .next {
     position: fixed;
     bottom: 10%;
     right: 20%;
     cursor: pointer;
 }
-.next:hover{
+.back {
+    position: fixed;
+    top: 13%;
+    left: 20%;
+    cursor: pointer;
+}
+.next:hover, .back:hover {
     transform: scale(1.1);
     transition: all 0.3s linear;
-    text-decoration: underline;
+}
+
+
+/* Choose Package */
+.subtitle {
+    color: grey;
+    font-size: .8rem;
+    font-style: italic;
+    text-align: center;
+    position: relative;
+    top: -.9rem;
+}
+
+#selections {
+    display: flex;
+    justify-content: space-evenly;
+}
+#selections label {
+    margin-right: 1rem;
+}
+#selections .selection {
+    background: #D6CE93;
+    padding: 2.2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: .6rem;
+    cursor: pointer;
+}
+.selection p{
+    line-height: 1.5rem;
+}
+
+#selections .price {
+    margin-top: .5rem;
+    text-align: center;
+    font-family: 'Satisfy';
+    color: #BC6C25;
+    font-size: 1.6rem;
+}
+#selections .package_head {
+    margin: 0 auto;
+    text-align: center;
+}
+#selections .package_name {
+    font-family: 'Satisfy';
+    color: #582F0E;
+    font-size: 1.3rem;
 }

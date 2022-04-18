@@ -14,4 +14,8 @@ class CateringController extends Controller
         return view('catering/event_form');
     }
 
+    function package() {
+        return view('catering/package');
+    }
+
 }

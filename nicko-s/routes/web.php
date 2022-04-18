@@ -46,3 +46,4 @@ Route::resource('admin/food',FoodController::class);
 
 Route::get('catering', [CateringController::class, 'landing']);
 Route::get('catering/event_form', [CateringController::class, 'event_form']);
+Route::get('catering/package', [CateringController::class, 'package']);
