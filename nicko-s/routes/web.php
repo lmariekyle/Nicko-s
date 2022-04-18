@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CateringController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,8 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 //Food Route
 Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
 Route::resource('admin/food',FoodController::class);
+
+//  Catering Routes
+// Route::resource('catering',CateringController::class);
+Route::get('catering', [CateringController::class, 'landing']);
+Route::get('catering/event_form', [CateringController::class, 'event_form']);
