@@ -93,6 +93,20 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link @if(!request()->is('admin/package*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#packageMaster"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Catering Package</span>
+                </a>
+                <div id="packageMaster" class="collapse @if(request()->is('admin/package*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('admin/package/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/package/')}}">View All</a>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

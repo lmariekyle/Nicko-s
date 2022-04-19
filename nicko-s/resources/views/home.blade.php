@@ -5,14 +5,14 @@
         <link href="/css/home.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Forum&family=Open+Sans&family=Satisfy&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div class="nav-style">
             <nav>
                 <ul>
-                    <li><a href="#">HOME</a></li>
+                    <li><a href="{{url('/')}}">HOME</a></li>
 
                     <li><a href="{{url('menu')}}">MENU</a></li>
                     <li><a href="{{url('catering')}}">CATERING</a></li>
@@ -34,8 +34,8 @@
                 <h2 class="f-1-2">Bilao Fiesta</h2>
                 <h2 class="f-1-3">& Food Trays</h2>
                 <p class="f-1-4">It will be our pleasure to serve you.</p>
-                <a href="#" class="f-1-btn1">View Menu</a>
-                <a href="#" class="f-1-btn2">Book us Now</a>
+                <a href="{{url('menu')}}" class="f-1-btn1">View Menu</a>
+                <a href="{{url('catering')}}" class="f-1-btn2">Book us Now</a>
             </div>
 
             <div class="feature-2">

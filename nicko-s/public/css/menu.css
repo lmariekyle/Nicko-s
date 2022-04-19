@@ -9,6 +9,26 @@ body {
     background: linear-gradient(90deg, rgba(214, 206, 147, 1) 55%, rgba(255, 255, 255, 1) 90%);
 }
 
+.arrow-style {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 70px;
+    top: 56px;
+    font-size: 30px;
+    color: black;
+}
+
+.cart-style {
+    position: absolute;
+    /* width: 53px;
+    height: 51px; */
+    font-size: 30px;
+    top: 56px;
+    right: 56px;
+    color: black;
+}
+
 .menu-container {
     display: flex;
     flex-direction: column;
@@ -16,12 +36,19 @@ body {
     text-align: center;
     width: 185px;
     height: 435px;
-    margin-top: 75px;
+    margin-top: 95px;
     margin-left: 35px;
+    /* background-color: aliceblue; */
+}
+
+.menu-contents {
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-title {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
     font-weight: 500;
     font-size: 38px;
     line-height: 60px;
@@ -30,10 +57,99 @@ body {
 
 .category-name {
     font-family: 'Satisfy';
+    /* font-family: 'Forum', cursive; */
     width: 185px;
     margin-top: 10px;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 25px;
+    line-height: 35px;
+    text-decoration: none;
+    color: black;
+}
+
+.food-display-container {
+    border: solid 3px #EE9B00;
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
+    position: absolute;
+    width: 1127px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* height: 832px; */
+    left: 256px;
+    top: 65px;
+    /* transform: rotate(-1deg); */
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.food-container {
+    /* align-self: center; */
+    flex: 1 1 20rem;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20px 30px;
+    background-color: #3F4238;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); */
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 20px;
+    align-self: normal;
+    /* width: 251px;
+    height: 337px; */
+}
+
+.food-img {
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    width: 240px;
+}
+
+.food-name {
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: 'Forum', cursive;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.food-description {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+}
+
+.food-view {
+    display: absolute;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: white; */
 }

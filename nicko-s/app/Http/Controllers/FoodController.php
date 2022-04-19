@@ -64,7 +64,7 @@ class FoodController extends Controller
         // $data->image=$imgPath;
         $data->save();
 
-        return redirect('admin/foods/create')->with('success','Category has been added.');
+        return redirect('admin/foods/create')->with('success','Food has been added.');
     }
 
     /**
@@ -122,7 +122,7 @@ class FoodController extends Controller
         // $data->image=$imgPath;
         $data->save();
 
-        return redirect('admin/foods/'.$id.'/edit')->with('success','Category has been updated.');
+        return redirect('admin/foods/'.$id.'/edit')->with('success','Food has been updated.');
     }
 
     /**
@@ -134,6 +134,6 @@ class FoodController extends Controller
     public function destroy($id)
     {
         Food::where('id',$id)->delete();
-        return redirect('admin/foods/')->with('success','Category has been deleted.');
+        return redirect('admin/foods/')->with('success','Food has been deleted.');
     }
 }

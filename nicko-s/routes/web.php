@@ -6,6 +6,7 @@ use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CateringController;
+use App\Http\Controllers\PackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,10 @@ use App\Http\Controllers\CateringController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Website Routes
 Route::get('/',[HomeController::class,'home']);
 Route::get('menu',[HomeController::class,'menu']);
+Route::get('viewcategory/{CategoryName}',[HomeController::class, 'viewcategory']);
 
 //Admin Dashboard
 Route::get('admin', function () {
@@ -44,6 +46,9 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 Route::get('admin/foods/{id}/delete',[FoodController::class,'destroy']);
 Route::resource('admin/foods',FoodController::class);
 
+//Package Route
+Route::get('admin/package/{id}/delete',[PackageController::class,'destroy']);
+Route::resource('admin/package',PackageController::class);
 
 Route::get('catering', [CateringController::class, 'landing']);
 Route::get('catering/event_form', [CateringController::class, 'event_form']);
