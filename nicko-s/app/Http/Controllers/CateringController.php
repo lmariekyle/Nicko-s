@@ -22,4 +22,6 @@ class CateringController extends Controller
         return view('catering/summary');
     }
 
+    // Testing
+
 }
