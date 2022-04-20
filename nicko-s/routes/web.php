@@ -50,6 +50,7 @@ Route::resource('admin/foods',FoodController::class);
 Route::get('admin/package/{id}/delete',[PackageController::class,'destroy']);
 Route::resource('admin/package',PackageController::class);
 
+// Catering Routes
 Route::get('catering', [CateringController::class, 'landing']);
 Route::get('catering/event_form', [CateringController::class, 'event_form']);
 Route::get('catering/package', [CateringController::class, 'package']);

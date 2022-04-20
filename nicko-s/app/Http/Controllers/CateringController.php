@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Package;
+
 class CateringController extends Controller
 {
     function landing() {
@@ -13,13 +15,18 @@ class CateringController extends Controller
         return view('catering/event_form');
     }
     function package() {
-        return view('catering/package');
+        $packages = Package::all();
+        return view('catering/package', ['data' => $packages]);
     }
-    function package_detail() {
-        return view('catering/package_detail');
+    function package_detail(Request $request) {
+        $package_id = $request->package_id;
+        $package = Package::findOrFail($package_id);
+        return view('catering/package_detail', ['data' => $package]);
     }
-    function summary() {
-        return view('catering/summary');
+    function summary(Request $request) {
+        $package_id = $request->package_id;
+        $package = Package::findOrFail($package_id);
+        return view('catering/summary', ['data' => $package]);
     }
 
     // Testing
