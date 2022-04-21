@@ -18,7 +18,8 @@
                     <span>Back</span>
                 </a>
             </div>
-            <form action="" method="POST" id="package_page">
+            <form action="/catering/package_post" method="POST" id="package_page">
+                @csrf
                 <h1 class="title">Choose a Package</h1>
                 <div class="subtitle">₱550 per head on all packages</div>
                 
@@ -83,9 +84,11 @@
                     @endif
                 </div>
                 
-                <div class="next" id="submit">
-                    <span>Proceed</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div class="next">
+                    <button type="submit">  
+                        <span>Proceed</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             
             
@@ -95,14 +98,5 @@
             <img src="../img/catering_index.jpeg" alt="">
         </div>
     </div>
-
-<script>
-    const submit = document.querySelector('#submit');
-    submit.addEventListener('click', () => {
-        const val = document.querySelector('input[name="package"]:checked').value;
-        window.location.href = `/catering/package_detail?package_id=${val}`;
-    });
-</script>
-
 </body>
 </html>

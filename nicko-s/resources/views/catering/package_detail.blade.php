@@ -18,62 +18,63 @@
                     <span>Back</span>
                 </a>
             </div>
-            <form action="" id="package_page">
+            <form action="/catering/package_detail_post" method="POST" id="package_page">
+                @csrf
                 <h1 class="title">Package Details</h1>
                 
-            <div id="details_page">
-                <div id="selections">
-                    @if($data)
-                        <label for="option">
-                            <div class="package_head">
-                                <span class="package_name">{{$data->PackageName}}</span> 
-                            </div>
-                            <div class="selection">
-                                <p>
-                                    <span class="text-bold"> 
-                                        {{$data->LechonQty}} Lechon 
-                                    </span>
+                <div id="details_page">
+                    <div id="selections">
+                        @if($data)
+                            <label for="option">
+                                <div class="package_head">
+                                    <span class="package_name">{{$data->PackageName}}</span> 
+                                </div>
+                                <div class="selection">
+                                    <p>
+                                        <span class="text-bold"> 
+                                            {{$data->LechonQty}} Lechon 
+                                        </span>
 
-                                    <span class="text-bold"> 
-                                        {{$data->FoodQty}} Main Dish
-                                    </span>
-                                    {{$data->Foods}} 
+                                        <span class="text-bold"> 
+                                            {{$data->FoodQty}} Main Dish
+                                        </span>
+                                        {{$data->Foods}} 
 
-                                    <span class="text-bold"> 
-                                        {{$data->DessertQty}} Dessert
-                                    </span>
-                                    {{$data->Desserts}} 
+                                        <span class="text-bold"> 
+                                            {{$data->DessertQty}} Dessert
+                                        </span>
+                                        {{$data->Desserts}} 
 
-                                    <span class="text-bold"> 
-                                        {{$data->BeverageQty}} Unlimited Refill Beverage
-                                    </span>
-                                    {{$data->Desserts}} 
+                                        <span class="text-bold"> 
+                                            {{$data->BeverageQty}} Unlimited Refill Beverage
+                                        </span>
+                                        {{$data->Desserts}} 
 
-                                    <span class="text-bold"> 
-                                        {{$data->TablesQty}} Tables
-                                    </span>
-                                    <span class="text-bold"> 
-                                        {{$data->ChairsQty}} Chairs
-                                    </span>
-                                    <span class="text-bold"> 
-                                        {{$data->DiningSetQty}} pax Dining Set
-                                    </span>
+                                        <span class="text-bold"> 
+                                            {{$data->TablesQty}} Tables
+                                        </span>
+                                        <span class="text-bold"> 
+                                            {{$data->ChairsQty}} Chairs
+                                        </span>
+                                        <span class="text-bold"> 
+                                            {{$data->DiningSetQty}} pax Dining Set
+                                        </span>
 
-                                    <span class="text-bold"> 
-                                        Decoration:
-                                    </span>
-                                    {{$data->Decoration}}
+                                        <span class="text-bold"> 
+                                            Decoration:
+                                        </span>
+                                        {{$data->Decoration}}
 
-                                    <span class="text-bold"> 
-                                        Description:
-                                    </span>
-                                    {{$data->Description}}
-                                </p>
-                            </div>
-                            <div class="price">₱{{$data->Price}}</div>
-                        </label>
-                    @endif
-                </div>
+                                        <span class="text-bold"> 
+                                            Description:
+                                        </span>
+                                        {{$data->Description}}
+                                    </p>
+                                </div>
+                                <div class="price">₱{{$data->Price}}</div>
+                            </label>
+                        @endif
+                    </div>
 
                     <div id="requests">
                         <div class="req">
@@ -86,20 +87,19 @@
                             <div class="subtitle_detail">Please provide additional details in regards to your event.<br>
                             Is there a theme? Do you only like chocolate desserts?</div>
                             </p>
-                            <textarea name="allergies" id="allergies" cols="60" rows="4"></textarea>
+                            <textarea name="notes" id="notes" cols="60" rows="4"></textarea>
                         </div>
                     </div>
                 </div>
-                
-                
-                
+                    
+                    
+                    
                 <div class="next">
-                    <a href="{{url('/catering/summary')}}">
+                    <button type="submit">  
                         <span>Proceed</span>
                         <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </button>
                 </div>
-            
             
             </form>
         </main>

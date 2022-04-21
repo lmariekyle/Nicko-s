@@ -142,9 +142,6 @@ main .button {
     margin-right: 1.7rem;
     margin-top: .5rem;
 }
-.event-date label:first-child {
-    margin-left: .4rem;
-}
 .option-input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -201,6 +198,9 @@ main .button {
 }
 
 /* event-date */
+#date-wrapper {
+    display: flex;
+}
 .event-date {
     margin-top: 2rem;
 }
@@ -209,6 +209,9 @@ main .button {
 }
 .event-date input {
     margin-left: 5.5rem;
+}
+.event-date label:first-child {
+    margin-left: .4rem;
 }
 input[type="datetime-local"] {
   color: #95a5a6;
@@ -253,6 +256,11 @@ input[type="datetime-local"] {
     position: fixed;
     bottom: 10%;
     right: 20%;
+    cursor: pointer;
+}
+.next button {
+    background: 0;
+    border: 0;
     cursor: pointer;
 }
 .back {

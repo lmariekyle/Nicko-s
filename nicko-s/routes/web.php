@@ -52,7 +52,14 @@ Route::resource('admin/package',PackageController::class);
 
 // Catering Routes
 Route::get('catering', [CateringController::class, 'landing']);
+
+Route::post('catering/event_form_post', [CateringController::class, 'event_form_post']);
 Route::get('catering/event_form', [CateringController::class, 'event_form']);
+
+Route::post('catering/package_post', [CateringController::class, 'package_post']);
 Route::get('catering/package', [CateringController::class, 'package']);
+
+Route::post('catering/package_detail_post', [CateringController::class, 'package_detail_post']);
 Route::get('catering/package_detail', [CateringController::class, 'package_detail']);
 Route::get('catering/summary', [CateringController::class, 'summary']);
+Route::get('catering/catering_done', [CateringController::class, 'catering_done']);

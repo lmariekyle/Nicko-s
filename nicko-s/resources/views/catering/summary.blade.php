@@ -20,28 +20,27 @@
             </div>
             <form action="" id="package_page">
                 <h1 class="title">A Summary of your Request</h1>
-                
                 <div id="summary">
                     <div id="summary_group">
                         <div class="summary_detail">
                             <h2 class="header">Event Type:</h2>
-                            <span class="content">Birthday Party</span>
+                            <span class="content">{{Cache::get('event_type')}}</span>
                         </div>
                         <div class="summary_detail">
-                            <h2 class="header">Event Date:</h2>
-                            <span class="content">May 26, 2022</span>
-                        </div>
+                            <h2 class="header">Start of Event:</h2>
+                            <span class="content">{{date('Y-m-d h:i a', strtotime(Cache::get('start_datetime')))}}</span>
+                        </div>  
                         <div class="summary_detail">
-                            <h2 class="header">Event Time:</h2>
-                            <span class="content">6:00PM - 9:00PM</span>
+                            <h2 class="header">End of Event:</h2>
+                            <span class="content">{{date('Y-m-d h:i a', strtotime(Cache::get('end_datetime')))}}</span>
                         </div>
                         <div class="summary_detail">
                             <h2 class="header">Venue:</h2>
                             <p>
-                                <span>Location:</span> Beautiful Resort <br>
-                                <span>City:</span> Cebu City <br>
-                                <span>Town:</span> Dalaguete <br>
-                                <span>Zip Code:</span> 6022 <br>
+                                <span>Location:</span> {{Cache::get('event_type')}} <br>
+                                <span>City:</span> {{Cache::get('city')}} <br>
+                                <span>Town:</span> {{Cache::get('town')}} <br>
+                                <span>Zip Code:</span> {{Cache::get('zip')}} <br>
                             </p>
                         </div>
                     </div>
@@ -102,17 +101,17 @@
                     <div id="summary_notes">
                         <div class="note">
                             <h2>Allergies and Restrictions</h2>
-                            <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam reprehenderit,</div>  
+                            <div class="box">{{ Cache::get('allergies') }}</div>  
                         </div>
                         <div class="note">
                             <h2>Notes</h2>
-                            <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam reprehenderit,</div>  
+                            <div class="box">{{ Cache::get('notes') }}</div>  
                         </div>
                     </div>
                 </div>
                 
                 <div class="next">
-                    <a href="{{url('')}}">
+                    <a href="{{url('catering/catering_done')}}">
                         <span>Done</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
