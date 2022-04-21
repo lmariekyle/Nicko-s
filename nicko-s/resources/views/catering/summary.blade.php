@@ -37,10 +37,10 @@
                         <div class="summary_detail">
                             <h2 class="header">Venue:</h2>
                             <p>
-                                <span>Location:</span> {{Cache::get('event_type')}} <br>
-                                <span>City:</span> {{Cache::get('city')}} <br>
-                                <span>Town:</span> {{Cache::get('town')}} <br>
-                                <span>Zip Code:</span> {{Cache::get('zip')}} <br>
+                                <span>Location:</span> {{Cache::get('event_address')}} <br>
+                                <span>City:</span> {{Cache::get('event_city')}} <br>
+                                <span>Town:</span> {{Cache::get('event_town')}} <br>
+                                <span>Zip Code:</span> {{Cache::get('event_zipcode')}} <br>
                             </p>
                         </div>
                     </div>
@@ -101,11 +101,11 @@
                     <div id="summary_notes">
                         <div class="note">
                             <h2>Allergies and Restrictions</h2>
-                            <div class="box">{{ Cache::get('allergies') }}</div>  
+                            <div class="box">{{ Cache::get('customer_allergies') }}</div>  
                         </div>
                         <div class="note">
                             <h2>Notes</h2>
-                            <div class="box">{{ Cache::get('notes') }}</div>  
+                            <div class="box">{{ Cache::get('customer_notes') }}</div>  
                         </div>
                     </div>
                 </div>

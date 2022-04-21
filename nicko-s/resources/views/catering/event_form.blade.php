@@ -44,14 +44,14 @@
                     <div class="event-date">
                         <h2>Event Start:</h2><br>
                         <label for="datetime">
-                            <input type="datetime-local" name="start_datetime"/>
+                            <input type="datetime-local" name="start_datetime" required/>
                             &nbsp;&nbsp; Datetime
                         </label>
                     </div>
                     <div class="event-date">
                         <h2>Event End:</h2><br>
                         <label for="datetime">
-                            <input type="datetime-local" name="end_datetime"/>
+                            <input type="datetime-local" name="end_datetime" required/>
                             &nbsp;&nbsp; Datetime
                         </label>
                     </div>    
@@ -59,16 +59,16 @@
                 
                 <div class="event-venue">
                     <h2>Venue Address:</h2><br>
-                    <input type="text" id="address" name="address" placeholder="Sitio Nasipit">
+                    <input type="text" id="address" name="address" placeholder="Sitio Nasipit" required>
                     <label for="address">Address</label> <br><br>
 
-                    <input type="text" id="city" name="city" placeholder="cebu">
+                    <input type="text" id="city" name="city" placeholder="cebu" required> 
                     <label for="city">City</label>
 
-                    <input type="text" id="Town" name="Town" placeholder="talamban">
+                    <input type="text" id="Town" name="Town" placeholder="talamban" required>
                     <label for="Town">Municipality/Town</label>
 
-                    <input type="text" id="zip" name="zip" placeholder="6000">
+                    <input type="text" id="zip" name="zip" placeholder="6000" required>
                     <label for="zip">Zip Code</label>
                 </div>
                 <div class="next">

@@ -16,6 +16,10 @@ class CreateCateringsTable extends Migration
         Schema::create('caterings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('catering_detail_id')->references('id')->on('catering_details');
+            $table->foreignId('customer_id');
+            $table->integer('total_payment');
+            $table->enum('catering_status', ['pending', 'approved', 'rejected', 'success', 'failed']);
         });
     }
 
