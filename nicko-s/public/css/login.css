@@ -1,0 +1,59 @@
+
+.bg-login{
+    background-color: #f3b43e;
+}
+
+.container{
+    border-radius: 5px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    height: 80%;
+
+}
+
+
+
+.btn1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background-color: #e7d180dd;
+    padding: 11px ;
+    border: 1px solid #e8c02fdd;
+   color: rgb(130, 99, 99);
+}
+
+.l-1{
+    font-family: 'Tangerine', serif;
+    font-size: 75px;
+    font-weight: bold;
+    color: #BC6C25;
+}
+
+.bg-feature-image {
+    background: url("/img/log-picture.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(82, 69, 56);
+  }
+
+  .small{
+      color: gray;
+  }
+
+  #exampleInputEmail{
+    border: 1px solid #e8c02fdd;
+    border-radius: 0px;
+
+  }
+
+  #exampleInputPassword{
+    border: 1px solid #e8c02fdd;
+    border-radius: 0px;
+  }
+
+  

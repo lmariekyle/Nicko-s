@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\CustomerDashboard;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +43,19 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 //Food Route
 Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
 Route::resource('admin/food',FoodController::class);
+Route::resource('admin/customer',CustomerController::class);
+
+//Customer
+Route::get('login',[CustomerController::class,'login']);
+Route::post('customer/login',[CustomerController::class,'customer_login']);
+Route::get('logout',[CustomerController::class,'logout']);
+Route::get('register',[CustomerController::class,'register']);
+Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
+
+Route::get('profile',[CustomerDashboard::class,'customer_profile']);
+Route::get('customer/editprofile',[CustomerDashboard::class,'customer_editprofile']);
+Route::post('customer/profile',[CustomerDashboard::class,'update']);
+Route::post('profile',[CustomerDashboard::class,'update_avatar']);
+
+
+
