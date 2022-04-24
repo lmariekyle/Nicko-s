@@ -13,8 +13,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">{{$data->Name}} 
-                            <a href="{{url('admin/foods')}}" class="float-right btn btn-success btn-sm">View All</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Catering Package
+                            <a href="{{url('admin/package')}}" class="float-right btn btn-success btn-sm">View All</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -24,12 +24,40 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <tr>
-                                        <th>Food Name</th>
-                                        <td>{{$data->Name}}</td>
+                                        <th>Package Name</th>
+                                        <td>{{$data->PackageName}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Ingredients</th>
-                                        <td>{{$data->Ingredients}}</td>
+                                        <th>Lechon Qty</th>
+                                        <td>{{$data->LechonQty}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Foods Included</th>
+                                        <td>{{$data->Foods}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Desserts</th>
+                                        <td>{{$data->Desserts}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Beverages</th>
+                                        <td>{{$data->Beverages}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Table Qty</th>
+                                        <td>{{$data->TablesQty}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chairs Qty</th>
+                                        <td>{{$data->ChairsQty}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dining Set Qty</th>
+                                        <td>{{$data->DiningSetQty}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Decorations</th>
+                                        <td>{{$data->Decoration}}</td>
                                     </tr>
                                     <tr>
                                         <th>Description</th>
@@ -39,13 +67,11 @@
                                         <th>Price</th>
                                         <td>{{$data->Price}}</td>
                                     </tr>
-                                    <th>Image</th>
-                                    <td><img src="{{asset('public/img/'.$data->image)}}" width="100"></td>
-                                    <!-- <tr>
+                                    <tr>
                                         <td colspan="2">
                                          <input type="submit" class="btn btn-primary" />
                                         </td>
-                                    </tr> -->
+                                    </tr>
                                 </table>
                                
                             </div>

@@ -8,6 +8,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\CustomerDashboard;
+use App\Http\Controllers\CateringController;
+use App\Http\Controllers\PackageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +21,10 @@ use App\Http\Controllers\CustomerDashboard;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Website Routes
 Route::get('/',[HomeController::class,'home']);
+Route::get('menu',[HomeController::class,'menu']);
+Route::get('viewcategory/{CategoryName}',[HomeController::class, 'viewcategory']);
 
 //Admin Dashboard
 Route::get('admin', function () {
@@ -57,5 +62,24 @@ Route::get('customer/editprofile',[CustomerDashboard::class,'customer_editprofil
 Route::post('customer/profile',[CustomerDashboard::class,'update']);
 Route::post('profile',[CustomerDashboard::class,'update_avatar']);
 
+Route::get('admin/foods/{id}/delete',[FoodController::class,'destroy']);
+Route::resource('admin/foods',FoodController::class);
 
+//Package Route
+Route::get('admin/package/{id}/delete',[PackageController::class,'destroy']);
+Route::resource('admin/package',PackageController::class);
+
+// Catering Routes
+Route::get('catering', [CateringController::class, 'landing']);
+
+Route::post('catering/event_form_post', [CateringController::class, 'event_form_post']);
+Route::get('catering/event_form', [CateringController::class, 'event_form']);
+
+Route::post('catering/package_post', [CateringController::class, 'package_post']);
+Route::get('catering/package', [CateringController::class, 'package']);
+
+Route::post('catering/package_detail_post', [CateringController::class, 'package_detail_post']);
+Route::get('catering/package_detail', [CateringController::class, 'package_detail']);
+Route::get('catering/summary', [CateringController::class, 'summary']);
+Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
 

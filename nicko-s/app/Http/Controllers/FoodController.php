@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\FoodCategory;
 use App\Models\Food;
 
@@ -26,7 +27,8 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('food.create');
+        $foodcategory=FoodCategory::all();
+        return view('food.create',['foodcategory'=>$foodcategory]);
 
     }
 
@@ -38,13 +40,31 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
+        
+        // $imgPath=$request->file('image')->store('public/img');
+        // if ($request->file('image') == null) {
+        //     $imgPath = "";
+        // }else{
+        //    $imgPath = $request->file('image')->store('public/img');  
+        // }
+
         $data= new Food;
+        $data->food_category_id=$request->fc_id;
         $data->Name=$request->foodname;
         $data->Ingredients=$request->ingredients;
+        $data->Description=$request->description;
         $data->Price=$request->price;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time().'.'.$extension;
+            $file->move('public/img',$filename);
+            $data->image=$filename;
+        }
+        // $data->image=$imgPath;
         $data->save();
 
-        return redirect('admin/food/create')->with('success','Category has been added.');
+        return redirect('admin/foods/create')->with('success','Food has been added.');
     }
 
     /**
@@ -67,9 +87,9 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
- 
+        $foodcategory=FoodCategory::all();
         $data=Food::find($id);
-        return view('food.edit',['data'=>$data]);
+        return view('food.edit',['data'=>$data,'foodcategory'=>$foodcategory]);
       
     }
 
@@ -83,11 +103,26 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         $data=Food::find($id);
-        $data->CategoryName=$request->categoryname;
+        $data->food_category_id=$request->fc_id;
+        $data->Name=$request->foodname;
+        $data->Ingredients=$request->ingredients;
         $data->Description=$request->description;
+        $data->Price=$request->price;
+        if($request->hasFile('image')){
+            $destination = 'public/img'.$data->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time().'.'.$extension;
+            $file->move('public/img',$filename);
+            $data->image=$filename;
+        }
+        // $data->image=$imgPath;
         $data->save();
 
-        return redirect('admin/food/'.$id.'/edit')->with('success','Category has been updated.');
+        return redirect('admin/foods/'.$id.'/edit')->with('success','Food has been updated.');
     }
 
     /**
@@ -98,7 +133,7 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        FoodCategory::where('id',$id)->delete();
-        return redirect('admin/food/')->with('success','Category has been deleted.');
+        Food::where('id',$id)->delete();
+        return redirect('admin/foods/')->with('success','Food has been deleted.');
     }
 }

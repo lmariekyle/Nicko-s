@@ -13,8 +13,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Food Categories
-                                <a href="{{url('admin/foods/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Packages
+                                <a href="{{url('admin/package/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -26,18 +26,14 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Food Category</th>
-                                            <th>Food Name</th>
-                                            <th>Image</th>
+                                            <th>Package Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                         <th>#</th>
-                                        <th>Food Category</th>
-                                        <th>Food Name</th>
-                                        <th>Image</th>
+                                        <th>Package Name</th>
                                         <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -46,13 +42,11 @@
                                         @foreach($data as $d)
                                         <tr>
                                             <td>{{$d->id}}</td>
-                                            <td>{{$d->foodcategory->CategoryName}}</td>
-                                            <td>{{$d->Name}}</td>
-                                            <td><img src="{{asset('public/img/'.$d->image)}}" width="100"></td>
+                                            <td>{{$d->PackageName}}</td>
                                             <td>
-                                                <a href="{{url('admin/foods/'.$d->id)}}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                                                <a href="{{url('admin/foods/'.$d->id).'/edit'}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                                <a onclick="return confirm('Are you sure to delete this data?')" href="{{url('admin/foods/'.$d->id).'/delete'}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                                <a href="{{url('admin/package/'.$d->id)}}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                                <a href="{{url('admin/package/'.$d->id).'/edit'}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                                <a onclick="return confirm('Are you sure to delete this data?')" href="{{url('admin/package/'.$d->id).'/delete'}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
