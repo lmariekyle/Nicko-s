@@ -207,3 +207,12 @@ nav ul li a:hover {
     height: 644px;
     margin-top: -620px;
 }
+
+#avatar{
+    border: 5px solid #e7d180dd;
+    margin-top: -15px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 200%;
+}

@@ -4,13 +4,13 @@
 <head>
 
     <meta charset="utf-8">
-    <link href="/css/adminlogin.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Customer Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,30 +38,27 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-feature-image"></div>
+                            
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="l-1 mb-4">Login</h1>
+                                        <h1 class="l-1  mb-4">Login</h1>
                                     </div>
-                                    <form class="user" method="post" action="{{url('admin/login')}}">
+                                    <form class="user" method="post" action="{{url('customer/login')}}">
                                         @csrf
                                         <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" @if(Cookie::has('adminuser')) value="{{Cookie::get('adminuser')}}" @endif
-                                                id="username" name="username" aria-describedby="emailHelp"
-                                                placeholder="Username">
+                                            <input required type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address..." name="email">
                                         </div>
                                         <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" @if(Cookie::has('adminpwd')) value="{{Cookie::get('adminpwd')}}" @endif
-                                                id="exampleInputPassword" name="password" placeholder="Password">
+                                            <input required type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox"  @if(Cookie::has('adminuser')) checked @endif name="rememberme" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
+                                        
                                         </div>
-                                        <input type="submit" class="btn1 btn-block" value="Login" /> 
+                                        <input type="submit" class="btn1  btn-block" value="Login"/> 
                                         </a>
 
                                     </form>
@@ -72,13 +69,17 @@
                                         @endforeach
                                     @endif
 
-                                    @if(Session::has('msg'))
-                                        <p class="text-danger">{{session('msg')}}</p>
+                                    @if(Session::has('error'))
+                                        <p class="text-danger">{{session('error')}}</p>
                                     @endif
 
-                                    <hr>
+                                    <hr class="hr">
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="#">Forgot Password?</a>
+                                        <!-- <a class="small" href="{{url('forgotpassword')}}">Forgot Password?</a> -->
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="{{url('register')}}">Create an Account</a>
                                     </div>
                                     
                                 </div>
