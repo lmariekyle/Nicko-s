@@ -55,7 +55,6 @@ Route::get('login',[CustomerController::class,'login']);
 Route::post('customer/login',[CustomerController::class,'customer_login']);
 Route::get('logout',[CustomerController::class,'logout']);
 Route::get('register',[CustomerController::class,'register']);
-Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
 
 Route::get('profile',[CustomerDashboard::class,'customer_profile']);
 Route::get('customer/editprofile',[CustomerDashboard::class,'customer_editprofile']);
@@ -83,3 +82,10 @@ Route::get('catering/package_detail', [CateringController::class, 'package_detai
 Route::get('catering/summary', [CateringController::class, 'summary']);
 Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
 
+//Forgot password routes
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);

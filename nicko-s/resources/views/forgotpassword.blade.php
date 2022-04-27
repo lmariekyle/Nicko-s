@@ -8,18 +8,29 @@
 </head>
 <body>
     <div class="container">
-        <form class="user" method="post" action="{{url('forgotpassword')}}">
+        @if (Session::has('message'))
+                <div class="alert alert-success" role="alert">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
+        <form class="user" method="post" action="{{route('forget.password.post')}}">
             @csrf
                 <div class="form-group">
                     <input required type="email" class="form-control form-control-user"
-                    id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email">
+                    id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email" autofocus>
+
+                    @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
                 </div>
                                            
-                <input type="submit" class="btn1  btn-block" value="Login"/> 
+                <input type="submit" class="btn1  btn-block" value="Send reset link"/> 
                                 
         </form>
     </div>
 
-
+    @yield('content')
+    
 </body>
 </html>
