@@ -62,7 +62,6 @@ class CustomerDashboard extends Controller
         $data->zip_code=$request->zip_code;
 
         session(['customerlogin'=>true,'data'=>$data]);
-        dd($data);
         $data->save();
        
         return redirect('customer/editprofile')->with('success','Successfully edited profile!');;
