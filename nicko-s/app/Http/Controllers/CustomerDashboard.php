@@ -40,7 +40,7 @@ class CustomerDashboard extends Controller
                 $detail=customers::where(['email'=>$user->email,'password'=>$pwd])->count();
 
                 if($detail <= 0) {
-                    return $fail(__('The current password is incorrect.'));
+                    return $fail(__('The current password is not correct.'));
                 }
             }]
         ]);

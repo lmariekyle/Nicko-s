@@ -99,7 +99,7 @@ module.exports = function xhrAdapter(config) {
         setTimeout(onloadend);
       };
     }
-
+//hehe
     // Handle browser request cancellation (as opposed to a manual cancellation)
     request.onabort = function handleAbort() {
       if (!request) {

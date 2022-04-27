@@ -11,16 +11,16 @@ class PassReset extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
+    public $detail;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details)
+    public function __construct($detail)
     {
-        $this->details = $details;
+        $this->detail = $detail;
     }
 
     /**
