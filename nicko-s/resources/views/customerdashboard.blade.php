@@ -97,7 +97,7 @@
 
                         
                         <h1>My Address</h1>
-                        <span class="address_data">{{$data->firstname}}{{$data->lastname}}</span>
+                        <span class="address_data">{{$data->firstname}} {{$data->lastname}}</span>
                         <span class="address_data">{{$data->phone}}</span>
                         <span class="address_data3">{{$data->house_number}} {{$data->street_name}} {{$data->barangay}} {{$data->municipality}} {{$data->city}} {{$data->zip_code}}</span>
 
