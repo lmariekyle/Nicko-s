@@ -1,12 +1,8 @@
 @component('mail::message')
-# Order Shipped
+Change password here
  
-Reset password
+Click the link to reset password:
 <a href="{{ route('reset.password.get', $details['token']) }}">{{ $details['token'] }}</a>
- 
-@component('mail::button', ['url' => ''])
-Reset
-@endcomponent
  
 Thanks,<br>
 {{ config('app.name') }}
