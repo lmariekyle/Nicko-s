@@ -24,6 +24,26 @@ class CustomerDashboard extends Controller
     }
 
     public function update(Request $request){
+        $user = session()->get('data'); 
+        if(!array_key_exists('image', $user->toArray())) {
+            $user = session()->get('data')[0]; 
+        }
+
+        $request->validate([
+            'firstname' => 'required',
+            'middlename' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'password' => 'confirmed',
+            'current' => ['required', function($attribute, $value, $fail) use ($user) {
+                $pwd=sha1($value);
+                $detail=customers::where(['email'=>$user->email,'password'=>$pwd])->count();
+
+                if($detail <= 0) {
+                    return $fail(__('The current password is not correct.'));
+                }
+            }]
+        ]);
         
         $data = customers::find($request->id);
         $data->firstname=$request->firstname;
@@ -31,7 +51,7 @@ class CustomerDashboard extends Controller
         $data->lastname=$request->lastname;
         $data->phone=$request->phone;
         $data->email=$request->email;
-        $data->password=sha1($request->password);
+        $data->password=($request->password == null)? $user->password : sha1($request->password);
 
         $data->province=$request->province;
         $data->city=$request->city;
@@ -44,7 +64,7 @@ class CustomerDashboard extends Controller
         session(['customerlogin'=>true,'data'=>$data]);
         $data->save();
        
-        return redirect('profile');
+        return redirect('customer/editprofile')->with('success','Successfully edited profile!');;
     }
 
     public function update_avatar(Request $request){

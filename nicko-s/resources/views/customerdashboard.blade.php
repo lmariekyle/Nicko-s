@@ -80,6 +80,8 @@
                     <div class="userdetails">
                     <h1>Personal Information</h1>
 
+                    
+
                         <h2>First Name</h2>
                         <span class="data">{{$data->firstname}}</span>
 
@@ -95,12 +97,12 @@
                         <h2>Phone Number</h2>
                         <span class="data">{{$data->phone}}</span>
 
-                        
                         <h1>My Address</h1>
-                        <span class="address_data">{{$data->firstname}}{{$data->lastname}}</span>
-                        <span class="address_data">{{$data->phone}}</span>
-                        <span class="address_data3">{{$data->house_number}} {{$data->street_name}} {{$data->barangay}} {{$data->municipality}} {{$data->city}} {{$data->zip_code}}</span>
-
+                        <div class="container-3">
+                            <span class="address_data">{{$data->firstname}} {{$data->lastname}}</span>
+                            <span class="address_data">{{$data->phone}}</span>
+                            <span class="address_data">{{$data->house_number}} {{$data->street_name}} {{$data->barangay}} {{$data->municipality}} {{$data->city}} {{$data->zip_code}}</span>
+                        </div>
 
                         <div class="editbutton">
                             <input type="hidden" name="ref" value="front"/>

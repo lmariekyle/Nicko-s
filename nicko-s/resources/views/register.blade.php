@@ -63,12 +63,15 @@
             <div class="input-box">
                 <h4 class="details"><span class="text-danger">RE-ENTER PASSWORD</span></h4>
                 <input required type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password_confirmation" id="password_confirmation">
+                
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong class="danger">{{ $message }}</strong>
                     </span>
                 @enderror
             </div>
+
+            <p class="text-success" style="text-align:center;">{{session('success')}}</p>
         </div>
 
         <div class="submitbutton">
@@ -76,7 +79,6 @@
             <input type="submit" class="btn1 btn-block" />
         </div>
 
-        <p class="text-success">{{session('success')}}</p>
 
 
         </form> 

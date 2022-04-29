@@ -52,9 +52,12 @@ class CustomerController extends Controller
         $data->password=sha1($request->password);;
         $data->save();
 
+
+
+
         $ref=$request->ref;
         if($ref=='front'){
-            return redirect('register')->with('success','Registered Successfully');
+            return redirect('register')->with('success','Successfully Registered');
         }
         return redirect('admin/customers/create')->with('success','Data has been added.');
     }
@@ -90,6 +93,7 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
 
     public function update(Request $request, $id)
     {

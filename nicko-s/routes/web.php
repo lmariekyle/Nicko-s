@@ -21,6 +21,7 @@ use App\Http\Controllers\PackageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Website Routes
 Route::get('/',[HomeController::class,'home']);
 Route::get('menu',[HomeController::class,'menu']);
@@ -31,11 +32,20 @@ Route::get('admin', function () {
     return view('dashboard');
 });
 
-
 //Admin Login
 Route::get('admin/login',[AdminController::class,'login']);
 Route::post('admin/login',[AdminController::class,'check_login']);
 Route::get('admin/logout',[AdminController::class,'logout']);
+
+//Forgot password routes
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+//To get view
+Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
+
 
 //Food Category Route
 Route::get('admin/foodcategory/{id}/delete',[FoodCategoryController::class,'destroy']);
@@ -55,7 +65,6 @@ Route::get('login',[CustomerController::class,'login']);
 Route::post('customer/login',[CustomerController::class,'customer_login']);
 Route::get('logout',[CustomerController::class,'logout']);
 Route::get('register',[CustomerController::class,'register']);
-Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
 
 Route::get('profile',[CustomerDashboard::class,'customer_profile']);
 Route::get('customer/editprofile',[CustomerDashboard::class,'customer_editprofile']);
@@ -82,4 +91,7 @@ Route::post('catering/package_detail_post', [CateringController::class, 'package
 Route::get('catering/package_detail', [CateringController::class, 'package_detail']);
 Route::get('catering/summary', [CateringController::class, 'summary']);
 Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
+
+
+
 
