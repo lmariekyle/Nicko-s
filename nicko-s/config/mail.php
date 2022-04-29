@@ -109,10 +109,10 @@ return [
     */
 
     'markdown' => [
-        'theme' => 'default',
+        'theme' => 'email-template',
 
         'paths' => [
-            resource_path('views/vendor/mail'),
+            resource_path('views/email'),
         ],
     ],
 

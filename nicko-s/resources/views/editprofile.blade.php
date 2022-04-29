@@ -97,7 +97,7 @@
                             <input required type="text"  name="lastname" id="lastname" value="{{$data->lastname}}">
                         
 
-                            <h2>Phone Name</h2>
+                            <h2>Phone Number</h2>
                             <input type="text"  name="phone" id="phone" value="{{$data->phone}}">
                     
 

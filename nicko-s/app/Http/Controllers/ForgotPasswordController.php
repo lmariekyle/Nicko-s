@@ -54,8 +54,9 @@ class ForgotPasswordController extends Controller
 
           Mail::to($request->email)->send(new PassReset($details));
   
-          return back()->with('message', 'We have e-mailed your password reset link! Please check your email.');
+          return back()->with('message', 'Password Reset Link Sent. Please check your email.');
       }
+
       /**
        * Write code on Method
        *
@@ -64,7 +65,7 @@ class ForgotPasswordController extends Controller
       public function showResetPasswordForm($token) { 
          return view('auth.forgotPasswordLink', ['token' => $token]);
       }
-  
+
       /**
        * Write code on Method
        *
@@ -95,4 +96,12 @@ class ForgotPasswordController extends Controller
   
           return redirect('login')->with('message', 'Your password has been changed!');
       }
+  
+      
 }
+
+
+
+
+
+

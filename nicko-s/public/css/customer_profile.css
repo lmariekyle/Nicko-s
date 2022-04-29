@@ -73,6 +73,9 @@ nav ul li a:hover {
     transition: .2s;
 }
 
+.container-3{
+    background-color: #ececec;
+}
 
 .p-1{
     text-align: center;
@@ -175,11 +178,9 @@ h2{
 }
 
 .address_data{
-    padding: 0;
-}
-
-.address_data3{
-   height: 30px;
+    line-height: 1.0em;
+    border: none;
+    font-weight: bold;
 }
 
 span{

@@ -1,9 +1,14 @@
 @component('mail::message')
-Change password here
+<h4 class="e-1">Nicko's Kitchen</h4>
  
-Click the link to reset password:
-<a href="{{ route('reset.password.get', $detail['token']) }}">{{ $detail['token'] }}</a>
+Your password can be reset by clicking the link below. If you did not request a new password, please ignore this email.
+<br><br><br>
  
+@component('mail::button', ['url' => route('reset.password.get', $detail['token'])])
+    Reset
+@endcomponent
+
+
 Thanks,<br>
-{{ config('app.name') }}
+Nicko's Kitchen
 @endcomponent

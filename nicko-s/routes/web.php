@@ -21,6 +21,7 @@ use App\Http\Controllers\PackageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Website Routes
 Route::get('/',[HomeController::class,'home']);
 Route::get('menu',[HomeController::class,'menu']);
@@ -31,11 +32,20 @@ Route::get('admin', function () {
     return view('dashboard');
 });
 
-
 //Admin Login
 Route::get('admin/login',[AdminController::class,'login']);
 Route::post('admin/login',[AdminController::class,'check_login']);
 Route::get('admin/logout',[AdminController::class,'logout']);
+
+//Forgot password routes
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+//To get view
+Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
+
 
 //Food Category Route
 Route::get('admin/foodcategory/{id}/delete',[FoodCategoryController::class,'destroy']);
@@ -82,12 +92,6 @@ Route::get('catering/package_detail', [CateringController::class, 'package_detai
 Route::get('catering/summary', [CateringController::class, 'summary']);
 Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
 
-//Forgot password routes
-Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 
-//To get view
-Route::get('forgotpassword',[ForgotPasswordController::class,'forgotpassword']);
+

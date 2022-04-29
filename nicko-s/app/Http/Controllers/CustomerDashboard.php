@@ -51,7 +51,7 @@ class CustomerDashboard extends Controller
         $data->lastname=$request->lastname;
         $data->phone=$request->phone;
         $data->email=$request->email;
-        $data->password=($request->password == null)? sha1($user->password) : sha1($request->password);
+        $data->password=($request->password == null)? $user->password : sha1($request->password);
 
         $data->province=$request->province;
         $data->city=$request->city;
