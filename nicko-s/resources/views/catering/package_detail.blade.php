@@ -80,14 +80,14 @@
                         <div class="req">
                             <h2>Allergies and Restrictions</h2>
                             <div class="subtitle_detail">Please list all food allergies, dietary restrictions, and food aversions</div>
-                            <textarea name="allergies" id="allergies" cols="60" rows="4"></textarea>
+                            <textarea name="allergies" id="allergies" cols="60" rows="4" required></textarea>
                         </div>
                         <div class="req">
                             <h2>Notes</h2>
                             <div class="subtitle_detail">Please provide additional details in regards to your event.<br>
                             Is there a theme? Do you only like chocolate desserts?</div>
                             </p>
-                            <textarea name="notes" id="notes" cols="60" rows="4"></textarea>
+                            <textarea name="notes" id="notes" cols="60" rows="4" required></textarea>
                         </div>
                     </div>
                 </div>

@@ -42,20 +42,17 @@
 
                 <div id="date-wrapper">
                     <div class="event-date">
-                        <h2>Event Start:</h2><br>
+                        <h2>Event Date & Time:</h2><br>
                         <label for="datetime">
-                            <input type="datetime-local" name="start_datetime" required/>
+                            <input type="datetime-local" name="event_datetime" required/>
                             &nbsp;&nbsp; Datetime
                         </label>
+                        @if(Session::has('msg'))
+                            <p class="text-danger">{{session('msg')}}</p>
+                        @endif
                     </div>
-                    <div class="event-date">
-                        <h2>Event End:</h2><br>
-                        <label for="datetime">
-                            <input type="datetime-local" name="end_datetime" required/>
-                            &nbsp;&nbsp; Datetime
-                        </label>
-                    </div>    
                 </div>
+
                 
                 <div class="event-venue">
                     <h2>Venue Address:</h2><br>

@@ -16,8 +16,7 @@ class CreateCateringDetailsTable extends Migration
         Schema::create('catering_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('package_id')->references('id')->on('packages');
-            $table->string('start_datetime');
-            $table->string('end_datetime');
+            $table->string('event_datetime');
             $table->string('event_type');
             $table->string('event_address');
             $table->string('event_city');

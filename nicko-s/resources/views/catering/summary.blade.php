@@ -110,15 +110,12 @@
                     </div>
                 </div>
                 
-                <div class="next">
+                <div class="next button">
                     <a href="{{url('catering/catering_done')}}">
-                        <span>Done</span>
+                        <span>Submit</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
-                
-            
-            
             </form>
         </main>
         <div class="image_bg">
