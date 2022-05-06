@@ -91,6 +91,7 @@ return [
     |
     */
 
+
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
@@ -108,10 +109,10 @@ return [
     */
 
     'markdown' => [
-        'theme' => 'default',
+        'theme' => 'email-template',
 
         'paths' => [
-            resource_path('views/vendor/mail'),
+            resource_path('views/email'),
         ],
     ],
 

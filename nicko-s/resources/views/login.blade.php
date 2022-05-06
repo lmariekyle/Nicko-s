@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="utf-8">
+    <link href="/css/adminlogin.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -16,13 +17,14 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-login">
 
     <div class="container">
 
@@ -35,11 +37,11 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-feature-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
+                                        <h1 class="l-1 mb-4">Login</h1>
                                     </div>
                                     <form class="user" method="post" action="{{url('admin/login')}}">
                                         @csrf
@@ -59,7 +61,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" /> 
+                                        <input type="submit" class="btn1 btn-block" value="Login" /> 
                                         </a>
 
                                     </form>

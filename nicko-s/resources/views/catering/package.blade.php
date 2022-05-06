@@ -18,83 +18,77 @@
                     <span>Back</span>
                 </a>
             </div>
-            <form action="" id="package_page">
+            <form action="/catering/package_post" method="POST" id="package_page">
+                @csrf
                 <h1 class="title">Choose a Package</h1>
                 <div class="subtitle">₱550 per head on all packages</div>
                 
                 <div id="selections">
-                    <label for="option1">
-                        <div class="package_head">
-                            <input type="radio" name="package" id="option1" class="option-input radio" checked>
-                            <span class="package_name">Package One</span> 
-                        </div>
-                        <div class="selection">
-                            <p>
-                                1 Lechon <br>
-                                5 Main Dish <br>
-                                1 Unlimited Refill Beverage <br>
-                                6 Tables <br> 
-                                30 Chairs <br>
-                                30 pax Dining Set <br>
+                    @if($data)
+                        @foreach($data as $d)
+                            <label for="{{$d->id}}">
+                                <div class="package_head">
+                                    @if($loop->index == 0)
+                                        <input type="radio" name="package" id="{{$d->id}}" value="{{$d->id}}" class="option-input radio" checked>
+                                    @else 
+                                        <input type="radio" name="package" id="{{$d->id}}" value="{{$d->id}}" class="option-input radio">
+                                    @endif
+                                    <span class="package_name">{{$d->PackageName}}</span> 
+                                    
+                                </div>
+                                <div class="selection">
+                                    <p>
+                                        <span class="text-bold"> 
+                                            {{$d->LechonQty}} Lechon 
+                                        </span>
 
-                                Decoration: <br>
-                                Table Setting <br>
-                                Buffet Table Setting <br>
-                            </p>
-                        </div>
-                        <div class="price">₱16,500</div>
-                    </label>
-                    <label for="option2">
-                        <div class="package_head">
-                            <input type="radio" name="package" id="option2" class="option-input radio">
-                            <span class="package_name">Package Two</span> 
-                        </div>
-                        <div class="selection">
-                            <p>
-                                1 Lechon <br>
-                                7 Main Dish <br>
-                                3 Unlimited Refill Beverage <br>
-                                10 Tables <br> 
-                                50 Chairs <br>
-                                50 pax Dining Set <br>
+                                        <span class="text-bold"> 
+                                            {{$d->FoodQty}} Main Dish
+                                        </span>
+                                        {{$d->Foods}} 
 
-                                Decoration: <br>
-                                Table Setting <br>
-                                Buffet Table Setting <br>
-                            </p>
-                        </div>
-                        <div class="price">₱16,500</div>
-                    </label>
-                    <label for="option3">
-                        <div class="package_head">
-                            <input type="radio" name="package" id="option3" class="option-input radio">
-                            <span class="package_name">Package Three</span> 
-                        </div>
-                        <div class="selection">
-                            <p>
-                                2 Lechon <br>
-                                9 Main Dish <br>
-                                4 Unlimited Refill Beverage <br>
-                                15 Tables <br> 
-                                75 Chairs <br>
-                                75 pax Dining Set <br>
+                                        <span class="text-bold"> 
+                                            {{$d->DessertQty}} Dessert
+                                        </span>
+                                        {{$d->Desserts}} 
 
-                                Decoration: <br>
-                                Table Setting <br>
-                                Buffet Table Setting <br>
-                            </p>
-                        </div>
-                        <div class="price">₱16,500</div>
-                    </label>
+                                        <span class="text-bold"> 
+                                            {{$d->BeverageQty}} Unlimited Refill Beverage
+                                        </span>
+                                        {{$d->Desserts}} 
 
+                                        <span class="text-bold"> 
+                                            {{$d->TablesQty}} Tables
+                                        </span>
+                                        <span class="text-bold"> 
+                                            {{$d->ChairsQty}} Chairs
+                                        </span>
+                                        <span class="text-bold"> 
+                                            {{$d->DiningSetQty}} pax Dining Set
+                                        </span>
+
+                                        <span class="text-bold"> 
+                                            Decoration:
+                                        </span>
+                                        {{$d->Decoration}}
+
+                                        <span class="text-bold"> 
+                                            Description:
+                                        </span>
+                                        {{$d->Description}}
+                                    </p>
+                                </div>
+                                <div class="price">₱{{$d->Price}}</div>
+                            </label>
+                        @endforeach
+                    @endif
                 </div>
                 
-                
                 <div class="next">
-                    <a href="{{url('/catering/package_detail')}}">
+                    <button type="submit">  
                         <span>Proceed</span>
                         <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </button>
                 </div>
             
             
@@ -104,6 +98,5 @@
             <img src="../img/catering_index.jpeg" alt="">
         </div>
     </div>
-
 </body>
 </html>

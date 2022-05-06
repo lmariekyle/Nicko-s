@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: rgb(236, 233, 230);
+    background: linear-gradient(90deg, rgba(236, 233, 230, 1) 43%, rgba(255, 255, 255, 1) 86%);
+}
+
+.nav-style {
+    height: 25vh;
+    width: 100%;
+    background-color: #FCBF49;
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 12%;
+}
+
+.logo {
+    position: absolute;
+    left: 42.56%;
+    right: 45.44%;
+    top: 4%;
+    bottom: 40.37%;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 65px;
+}
+
+.logo-1 {
+    position: absolute;
+    left: 42.56%;
+    right: 45.44%;
+    top: 9.37%;
+    bottom: 0%;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 65px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 25px 35px;
+}
+
+nav ul li a {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    color: white;
+    transition: .2s;
+}
+
+.container-3{
+    background-color: #ececec;
+}
+
+.p-1{
+    text-align: center;
+    margin-top: 2%;
+    font-family: 'Tangerine', serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #BC6C25;
+    position: relative;
+}
+
+.t-1{
+    margin: auto;
+    width: 30%;
+    padding: 30px;
+    top: 10%;
+    left: 50%;
+    
+}
+
+img{
+    margin-top: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    width: 220px;
+    border-radius: 200%;
+    border: 6px solid #e8c02fdd;
+}
+
+#avatar{
+    border: 5px solid #e7d180dd;
+    margin-top: -15px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+}
+
+.btn01{
+    margin:0 auto;
+    margin-top: -20%;
+    width: 150px;
+    background-color: #e7d180dd;
+    padding: 4px ;
+    border: 1px solid #e8c02fdd;
+    color: rgb(81, 80, 80);
+    font-weight: bold;  
+}
+
+th{
+    text-align: left;
+}
+
+.upload_prof_img{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.prof_name{
+    margin-top: 2%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.p_box{
+    width: 450px;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 4%;
+
+}
+
+.userdetails h2,span{
+    margin-left: 22%;
+    margin-top: 4%;
+
+}
+
+
+h1{
+    font-family: "Monteserrat", sans-serif;
+    color: #BC6C25;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+
+
+h2{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.address_data{
+    line-height: 1.0em;
+    border: none;
+    font-weight: bold;
+}
+
+span{
+    border: 0;
+    border-bottom: 1px solid #FCBF49;
+    width: 250px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8em;
+    padding: 2px 0;
+    color: rgb(80, 79, 79);
+    outline: none;
+    display: inline-block;
+}
+
+.editbutton{
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 13%;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+
+}
+
+

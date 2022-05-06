@@ -4,8 +4,22 @@
         <title>Home Page</title>
         <link href="/css/home.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+        @if (Session::has('customerlogin'))
+        <?php 
+            $data = session()->get('data'); 
+            if(!array_key_exists('image', $data->toArray())) {
+                $data = session()->get('data')[0]; 
+            }
+        ?>
+        @endif
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Forum&family=Open+Sans&family=Satisfy&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
@@ -21,9 +35,16 @@
                     <h2 class="logo">Nicko's</h2>
                     <h2 class="logo-1">Kitchen</h2>
                 <ul>
-                    <li><a href="#">OUR STORY</a></li>
+                    <li><a href="#">OUR STORY</a></li>      
+                    @if (Session::has('customerlogin'))
+                    <li><a href="{{url('logout')}}">LOGOUT</a></li>
+                    <li><a  href="{{url('profile')}}">
+                        <img src="/img/{{$data->image}}" id="avatar">
+                    </a></li>
+                    @else
                     <li><a href="#">CONTACT</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="{{url('login')}}">LOGIN</a></li>
+                    @endif
                 </ul>
             </nav>
         </div>
@@ -45,11 +66,15 @@
         </div>
     </body>
 
+<<<<<<< HEAD
     <div class="featured-container-foods">
         @foreach($content as $cnt)
             <h1>{{$cnt->FeaturedFoodHeader}}</h1>
             <h3>{{$cnt->FeaturedFoodSubText}}</h3>
         @endforeach
     </div>
+=======
+
+>>>>>>> 7ecae901db78cf7ccdec31e4c12c2efe84397441
     </body>
 </html>
