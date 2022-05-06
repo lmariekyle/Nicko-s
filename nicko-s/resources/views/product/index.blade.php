@@ -33,7 +33,7 @@
             <img src="{{asset('public/img/'.$f->image)}}" class="food-img">
                 <p class="food-name">{{$f->Name}}</p>
                 <!-- <p class="food-description">{{$f->Description}}</p> -->
-                <a href="#" class="food-view">View</a>
+                <a href="{{url('viewcategory/'.$category->CategoryName.'/'.$f->Name)}}" class="food-view">View</a>
             </div>
         @endforeach
         </div>

@@ -107,6 +107,20 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link @if(!request()->is('admin/homepage*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#homepageMaster"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Home Page</span>
+                </a>
+                <div id="homepageMaster" class="collapse @if(request()->is('admin/homepage*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('admin/homepage/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/homepage/')}}">View All</a>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

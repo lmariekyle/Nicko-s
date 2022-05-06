@@ -7,6 +7,7 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CateringController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\AdminHomePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ use App\Http\Controllers\PackageController;
 Route::get('/',[HomeController::class,'home']);
 Route::get('menu',[HomeController::class,'menu']);
 Route::get('viewcategory/{CategoryName}',[HomeController::class, 'viewcategory']);
+Route::get('viewcategory/{CategoryName}/{Name}',[HomeController::class, 'foodview']);
+Route::get('viewfood/{Name}',[HomeController::class, 'viewfood']);
 
 //Admin Dashboard
 Route::get('admin', function () {
@@ -49,6 +52,10 @@ Route::resource('admin/foods',FoodController::class);
 //Package Route
 Route::get('admin/package/{id}/delete',[PackageController::class,'destroy']);
 Route::resource('admin/package',PackageController::class);
+
+//Admin HomePageCRUD Route
+Route::get('admin/homepage/{id}/delete',[AdminHomePageController::class,'destroy']);
+Route::resource('admin/homepage',AdminHomePageController::class);
 
 Route::get('catering', [CateringController::class, 'landing']);
 Route::get('catering/event_form', [CateringController::class, 'event_form']);

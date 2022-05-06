@@ -43,6 +43,13 @@
                 <img src="/img/Nicko's _1.png" class="f-2-img" alt="feature-img">
             </div>
         </div>
+    </body>
 
+    <div class="featured-container-foods">
+        @foreach($content as $cnt)
+            <h1>{{$cnt->FeaturedFoodHeader}}</h1>
+            <h3>{{$cnt->FeaturedFoodSubText}}</h3>
+        @endforeach
+    </div>
     </body>
 </html>

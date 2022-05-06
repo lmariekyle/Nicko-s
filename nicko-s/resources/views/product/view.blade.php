@@ -14,27 +14,16 @@
 
 </head>
 <body>
-        <a href="{{url('/')}}"><span class='bi bi-chevron-left arrow-style'></span></a>
+        <a href="{{url('menu')}}"><span class='bi bi-chevron-left arrow-style'></span></a>
         <a href="#"><span class='bi bi-cart cart-style'></span></a>
-    <div class="menu-container">
-        <h3 class="menu-title">Menu</h3>
-        <div class="menu-contents">
-            @foreach($category as $c)
-            <a href="{{url('viewcategory/'.$c->CategoryName)}}" class="category-name">{{$c->CategoryName}}</a>
-            @endforeach
-        </div>
-    </div>
 
     <div class="food-display-container">
-        <div class="row">
-        @foreach($food as $f)
+        <div class="row2">
             <div class="food-container">
-            <img src="{{asset('public/img/'.$f->image)}}" class="food-img">
-                <p class="food-name">{{$f->Name}}</p>
-                <!-- <p class="food-description">{{$f->Description}}</p> -->
-                <a href="{{url('viewfood/'.$f->Name)}}" class="food-view">View</a>
+            <img src="{{asset('public/img/'.$foods->image)}}" class="food-img">
+                <p class="food-name">{{$foods->Name}}</p>
+                <p class="food-description">{{$foods->Description}}</p>
             </div>
-        @endforeach
         </div>
     </div>
     
