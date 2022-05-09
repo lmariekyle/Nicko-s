@@ -11,6 +11,7 @@ use App\Http\Controllers\CustomerDashboard;
 use App\Http\Controllers\CateringController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\AdminHomePageController;
+use App\Http\Controllers\BasketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,20 @@ use App\Http\Controllers\AdminHomePageController;
 
 //Website Routes
 Route::get('/',[HomeController::class,'home']);
+
+//Food Menu Routes
 Route::get('menu',[HomeController::class,'menu']);
 Route::get('viewcategory/{CategoryName}',[HomeController::class, 'viewcategory']);
 Route::get('viewcategory/{CategoryName}/{Name}',[HomeController::class, 'foodview']);
 Route::get('viewfood/{Name}',[HomeController::class, 'viewfood']);
+Route::middleware(['auth'])->group(function (){
+});
+Route::post('add-to-basket',[BasketController::class,'addFood']);
+Route::get('basket',[BasketController::class,'viewbasket']);
+Route::post('delete-basket-item',[BasketController::class,'deleteItem']);
+Route::post('update-basket',[BasketController::class,'updateBasket']);
+
+
 
 //Admin Dashboard
 Route::get('admin', function () {
@@ -58,7 +69,7 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 // Route::put('foodcategory',[FoodCategoryController::class, 'index']);
 // Route::delete('foodcategory',[FoodCategoryController::class, 'index']);
 
-//Food Route
+//Admin Food Route
 Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
 Route::resource('admin/food',FoodController::class);
 Route::resource('admin/customer',CustomerController::class);

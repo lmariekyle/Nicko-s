@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
         <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+           
         @if (Session::has('customerlogin'))
         <?php $data = session()->get('data')[0]; ?>
         @endif

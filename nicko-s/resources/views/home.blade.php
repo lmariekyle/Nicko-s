@@ -66,15 +66,11 @@
         </div>
     </body>
 
-<<<<<<< HEAD
     <div class="featured-container-foods">
         @foreach($content as $cnt)
             <h1>{{$cnt->FeaturedFoodHeader}}</h1>
             <h3>{{$cnt->FeaturedFoodSubText}}</h3>
         @endforeach
     </div>
-=======
-
->>>>>>> 7ecae901db78cf7ccdec31e4c12c2efe84397441
     </body>
 </html>

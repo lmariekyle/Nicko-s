@@ -15,7 +15,7 @@
 </head>
 <body>
         <a href="{{url('/')}}"><span class='bi bi-chevron-left arrow-style'></span></a>
-        <a href="#"><span class='bi bi-cart cart-style'></span></a>
+        <a href="{{url('basket')}}"><span class='bi bi-cart cart-style'></span></a>
     <div class="menu-container">
         <h3 class="menu-title">Menu</h3>
         <div class="menu-contents">
