@@ -10,7 +10,7 @@
     
     <title>MENU</title>
 
-    <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/basket.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,24 +20,30 @@
 </head>
 <body>
         <a href="{{url('menu')}}"><span class='bi bi-chevron-left arrow-style'></span></a>
-        <a href="{{url('basket')}}"><span class='bi bi-cart cart-style'></span></a>
+        <!-- <a href="{{url('basket')}}"><span class='bi bi-cart cart-style'></span></a> -->
 
-   
+
+        <h3 class="header-txt">Your Basket</h3>
+        
     <div class="food-display-container-view">
+
         <div class="row2">
             @php $total= 0; @endphp
         @foreach($basketItems as $item)
             <div class="food-container-view">
-            <img src="{{asset('public/img/'.$item->food->image)}}" height="150px" width="150px">
-                    <div class=food-desc-container>
-                        <p class="food-name-view">{{$item->food->Name}}</p>
-                        <p class="food-description-view">PHP {{$item->food->Price}}</p>
+                    <div class="food-desc-container">
+                    <img src="{{asset('public/img/'.$item->food->image)}}" class="food-img-basket">
+                        <p class="food-name-basket">{{$item->food->Name}}</p>
+                        <p class="food-description-basket">PHP {{$item->food->Price}}</p>
                         <input type="hidden" value="{{$item->food_id}}" class="food_id">
                         
-                        <label for="Quantity">Quantity</label>
+                        <div class="qty-box">
+                        <label for="Quantity">Quantity: </label>
                         <button class="changeQuantity decrement-btn">-</button>
                         <input type="text" name="qty" class="qty-input" value="{{$item->food_qty}}">
                         <button class="changeQuantity increment-btn">+</button>
+                        </div>
+
 
                         <div>
                             <button type="button" class="remove-btn"> <i class="fa fa-trash"></i> Remove</button>
@@ -48,13 +54,16 @@
             @php $total += $item->food->Price * $item->food_qty ; @endphp
         @endforeach
         </div>
-
-        <div>
+        <div class="price-basket">
             <h5>Total Price: PHP {{$total}}</h5>
-            <button type="button" class="checkout-btn">Proceed to Checkout</button>
+            <a href="{{url('checkout')}}" class="checkout-btn">Proceed to Checkout</button>
         </div>
-
     </div>
+    <!-- <div class="price-basket">
+            <h5>Total Price: PHP {{$total}}</h5>
+            <a href="{{url('checkout')}}" class="checkout-btn">Proceed to Checkout</button>
+        </div> -->
+
 
     <script>
     $(document).ready(function(){

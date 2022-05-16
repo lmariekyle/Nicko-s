@@ -27,19 +27,19 @@
         <div class="row2">
             @php $total= 0; @endphp
             <div class="food-container-view">
-            <img src="{{asset('public/img/'.$foods->image)}}" class="food-img">
+            <img src="{{asset('public/img/'.$foods->image)}}" class="food-img-view">
             <div class=food-desc-container>
                 <p class="food-name-view">{{$foods->Name}}</p>
                 <p class="food-description-view">{{$foods->Description}}</p>
-                <p class="food-description-view">PHP {{$foods->Price}}</p>
+                <p class="food-price-view">PHP {{$foods->Price}}</p>
 
                 <input type="hidden" value="{{$foods->id}}" class="food-id">
-                
-                <label for="Quantity">Quantity</label>
+                <div class="qty-box">
+                <label for="Quantity" class="qty-txt">Quantity : </label>
                 <button class="decrement-btn">-</button>
                 <input type="text" name="qty" class="qty-input" value="1">
                 <button class="increment-btn">+</button>
-
+                </div>
                 <div>
                     <button type="button" class="add-to-basket-btn">Add to Basket</button>
                 </div>

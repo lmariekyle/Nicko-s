@@ -19,5 +19,9 @@ class Basket extends Model
     public function food(){
         return $this->belongsTo(Food::class,'food_id','id');
     }
+    
+    public function user(){
+        return $this->belongsTo(customers::class,'user_id','id');
+    }
 
 }

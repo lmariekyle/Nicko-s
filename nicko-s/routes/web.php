@@ -12,6 +12,7 @@ use App\Http\Controllers\CateringController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\AdminHomePageController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,8 @@ Route::post('add-to-basket',[BasketController::class,'addFood']);
 Route::get('basket',[BasketController::class,'viewbasket']);
 Route::post('delete-basket-item',[BasketController::class,'deleteItem']);
 Route::post('update-basket',[BasketController::class,'updateBasket']);
-
-
+Route::get('checkout',[CheckoutController::class,'index']);
+Route::post('place-order',[CheckoutController::class,'placeorder']);
 
 //Admin Dashboard
 Route::get('admin', function () {

@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: rgb(214, 206, 147);
+    background: linear-gradient(90deg, rgba(214, 206, 147, 1) 55%, rgba(255, 255, 255, 1) 90%);
+}
+
+.arrow-style {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 70px;
+    top: 56px;
+    font-size: 30px;
+    color: black;
+}
+
+.cart-style {
+    position: absolute;
+    /* width: 53px;
+    height: 51px; */
+    font-size: 30px;
+    top: 56px;
+    right: 56px;
+    color: black;
+}
+
+.food-display-container-view {
+    border: solid 3px #EE9B00;
+    display: flex;
+    justify-content: flex-start;
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
+    position: relative;
+    width: 1127px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* height: 832px; */
+    left: 0px;
+    top: 150px;
+    /* transform: rotate(-1deg); */
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+}
+
+.header-txt {
+    position: absolute;
+    top: 35px;
+    left: 130px;
+    font-size: 55px;
+    align-self: center;
+    font-family: 'Satisfy';
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: #582F0E;
+    font-weight: 100;
+}
+
+
+/* .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.food-container-view {
+    margin: 10px 10px;
+    padding: 5px 20px;
+    margin-bottom: 2px;
+    /* background-color: wheat; */
+}
+
+.food-img-basket {
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    align-self: center;
+    width: 150px;
+    height: 150px;
+}
+
+.food-name-basket {
+    font-size: 25px;
+    align-self: center;
+    font-family: 'Satisfy';
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: #582F0E;
+    /* background-color: white; */
+}
+
+.food-description-basket {
+    margin-bottom: 10px;
+    font-size: 18px;
+    align-self: center;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    color: #582F0E;
+    /* background-color: wheat; */
+}
+
+.food-desc-container {
+    /* justify-content: center; */
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px 20px;
+    padding: 10px 20px;
+}
+
+.qty-box {
+    width: 190px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.qty-txt {
+    font-size: 15px;
+    font-weight: 500;
+    align-self: left;
+    margin-right: 5px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    color: #582F0E;
+}
+
+.decrement-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    border: 1px solid black;
+    background-color: transparent;
+    height: 15px;
+    width: 30px;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.increment-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    border: 1px solid black;
+    line-height: 12px;
+    background-color: transparent;
+    height: 15px;
+    width: 30px;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.qty-input {
+    background-color: transparent;
+    width: 35px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-basket-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgba(214, 206, 147, 1);
+    margin-top: 15px;
+    width: 130px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #582F0E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.remove-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    background-color: transparent;
+    height: 15px;
+    width: 45px;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    color: black;
+    cursor: pointer;
+    border: none;
+    margin-left: 8px;
+}
+
+.price-basket {
+    max-width: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: baseline;
+    /* background-color: white; */
+    position: absolute;
+    bottom: -95px;
+    right: 5px;
+}
+
+h5 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 10px;
+    color: #582F0E;
+}
+
+.checkout-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 35px;
+    background-color: #F4D35E;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #582F0E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}

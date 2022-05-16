@@ -150,6 +150,15 @@ body {
     width: 240px;
 }
 
+.food-img-view {
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    align-self: center;
+    width: 240px;
+    height: 300px;
+}
+
 .food-name {
     font-size: 20px;
     margin: 10px 0;
@@ -182,7 +191,7 @@ body {
 }
 
 .food-name-view {
-    font-size: 85px;
+    font-size: 65px;
     align-self: center;
     /* margin-left: 330px; */
     font-family: 'Satisfy';
@@ -194,15 +203,25 @@ body {
 }
 
 .food-description-view {
-    /* margin-bottom: 10px; */
     font-size: 15px;
-    /* margin-left: -340px; */
     margin-right: 40px;
     align-self: center;
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
+    font-weight: 580;
     text-decoration: none;
     color: #582F0E;
+}
+
+.food-price-view {
+    font-size: 25px;
+    font-weight: 600;
+    align-self: left;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    color: #582F0E;
+    margin-top: 10px;
     /* background-color: wheat; */
 }
 
@@ -215,4 +234,87 @@ body {
     flex-wrap: wrap;
     margin: 20px 30px;
     padding: 10px 20px;
+}
+
+.qty-box {
+    margin-top: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.qty-txt {
+    font-size: 15px;
+    font-weight: 500;
+    align-self: left;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    color: #582F0E;
+}
+
+.decrement-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 15px;
+    border: 0px;
+    background-color: #F4D35E;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    /* margin-top: 10px; */
+}
+
+.increment-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 15px;
+    border: 0px;
+    background-color: #F4D35E;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    /* margin-top: -40px;
+    margin-lef: 140px; */
+}
+
+.qty-input {
+    background-color: transparent;
+    width: 35px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-basket-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgba(214, 206, 147, 1);
+    margin-top: 15px;
+    width: 130px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #582F0E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
 }
