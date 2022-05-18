@@ -17,7 +17,8 @@ class CreateCateringsTable extends Migration
             $table->id();
             $table->foreignId('catering_detail_id')->references('id')->on('catering_details');
             $table->foreignId('customer_id');
-            $table->integer('total_payment');
+            $table->integer('total_price');
+            $table->integer('total_payments');
             $table->enum('catering_status', ['pending', 'approved', 'rejected', 'success', 'failed']);
             $table->timestamps();
         });

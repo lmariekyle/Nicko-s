@@ -27,13 +27,9 @@
                             <span class="content">{{Cache::get('event_type')}}</span>
                         </div>
                         <div class="summary_detail">
-                            <h2 class="header">Start of Event:</h2>
-                            <span class="content">{{date('Y-m-d h:i a', strtotime(Cache::get('start_datetime')))}}</span>
+                            <h2 class="header">Date of Event:</h2>
+                            <span class="content">{{date('Y-m-d h:i a', strtotime(Cache::get('event_datetime')))}}</span>
                         </div>  
-                        <div class="summary_detail">
-                            <h2 class="header">End of Event:</h2>
-                            <span class="content">{{date('Y-m-d h:i a', strtotime(Cache::get('end_datetime')))}}</span>
-                        </div>
                         <div class="summary_detail">
                             <h2 class="header">Venue:</h2>
                             <p>
@@ -110,9 +106,9 @@
                     </div>
                 </div>
                 
-                <div class="next button">
-                    <a href="{{url('catering/catering_done')}}">
-                        <span>Submit</span>
+                <div class="next">
+                    <a href="{{url('catering/payment')}}">
+                        <span>Proceed</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>

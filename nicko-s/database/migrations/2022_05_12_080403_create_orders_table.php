@@ -19,9 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('total_price');
             $table->string('payment_method');
             $table->string('middlename');
-            $table->string('middlename');
             $table->string('firstname');
-            $table->string('middlename');
             $table->string('lastname');
             $table->integer('phone');
             $table->string('email');

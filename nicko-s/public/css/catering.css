@@ -432,3 +432,17 @@ input[type="datetime-local"] {
     padding: .5rem;
     font-size: .8   rem;
 }
+
+/* payments */
+.gcash-box {
+    width: 45%;
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2rem;
+    background: white;
+}
+.gcash-img {
+    width: 150px;
+    margin-top: 1rem;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DateTime;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -13,7 +14,14 @@ use App\Models\CateringDetail;
 class CateringController extends Controller
 {
     function landing() {
-        Cache::flush();
+        // if (Session::has('customerlogin')) {
+        //     $data = Session::get('data');
+        //     $customer_id = $data[0]->id;
+        //     error_log($customer_id);
+        //     return response()->json(['status' => 'goods']);
+        // } else {
+        //     return response()->json(['status' => 'please log in']);
+        // }
         return view('catering/index');
     }
     function event_form() {
@@ -28,6 +36,8 @@ class CateringController extends Controller
 
         if ($today > $user_date) {
             return redirect('catering/event_form')->with('msg','Please select correct date(Past Date Selected)');
+        } else if ($today == $user_date){
+            return redirect('catering/event_form')->with('msg','Cannot make Catering Reservation on the same date');
         }
 
         // query from db, insert sorted, ascending
@@ -83,32 +93,55 @@ class CateringController extends Controller
         $package = Package::findOrFail($package_id);
         return view('catering/summary', ['data' => $package]);
     }
-    function catering_done() {
-
-        $c = new Catering;
-        $cd = new CateringDetail;
-        
-        $cd->package_id = Cache::get('package_id');
-        $cd->event_datetime = Cache::get('event_datetime');
-        $cd->event_type = Cache::get('event_type');
-        $cd->event_address = Cache::get('event_address');
-        $cd->event_city = Cache::get('event_city');
-        $cd->event_town = Cache::get('event_town');
-        $cd->event_zipcode = Cache::get('event_zipcode');
-        $cd->customer_allergies = Cache::get('customer_allergies');
-        $cd->customer_notes = Cache::get('customer_notes');
-        $cd->save();
-
-        $c->catering_detail_id = $cd->id;
-        $c->customer_id = 0; // change later
-        $c->total_payment = Cache::get('price');
-        $c->catering_status = 'pending';
-        $c->save();
-
-        Cache::flush();
-        return redirect('/');
+    function payment() {
+        return view('catering/payment');
     }
 
-    // Testing
+    function catering_done() {
 
+        $package_id = Cache::get('package_id');
+        $event_datetime = Cache::get('event_datetime');
+        $event_type = Cache::get('event_type');
+        $event_address = Cache::get('event_address');
+        $event_city = Cache::get('event_city');
+        $event_town = Cache::get('event_town');
+        $event_zipcode = Cache::get('event_zipcode');
+        $customer_allergies = Cache::get('customer_allergies');
+        $customer_notes = Cache::get('customer_notes');
+        $total_price = Cache::get('price');
+
+        if (
+        $package_id != null && $event_datetime != null && $event_type != null && 
+        $event_address != null && $event_city != null && $event_town != null && 
+        $event_zipcode != null && $customer_allergies != null && $customer_notes != null && 
+        $customer_notes != null && $total_price != null 
+        ) {
+            $c = new Catering;
+            $cd = new CateringDetail;
+            
+            $cd->package_id = $package_id;
+            $cd->event_datetime = $event_datetime;
+            $cd->event_type = $event_type;
+            $cd->event_address = $event_address;
+            $cd->event_city = $event_city;
+            $cd->event_town = $event_town;
+            $cd->event_zipcode = $event_zipcode;
+            $cd->customer_allergies = $customer_allergies;
+            $cd->customer_notes = $customer_notes;
+            $cd->save();
+
+            $c->catering_detail_id = $cd->id;
+            $c->customer_id = 0; // change later
+            $c->total_price = $total_price;
+            $c->total_payments = 0;
+            $c->catering_status = 'pending';
+            $c->save();
+
+            Cache::flush();
+            return redirect('/');
+        } else {
+            Cache::flush();
+            return redirect('catering/event_form')->with('msg','Please Complete All Data Required');
+        }
+    }
 }
