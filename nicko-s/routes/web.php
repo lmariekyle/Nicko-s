@@ -113,6 +113,7 @@ Route::get('catering/summary', [CateringController::class, 'summary']);
 Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
 
 Route::get('catering/payment', [CateringController::class, 'payment']);
+Route::get('catering/reservation', [CateringController::class, 'reservation']);
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DateTime;
 use Session;
+use stdClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -14,15 +15,12 @@ use App\Models\CateringDetail;
 class CateringController extends Controller
 {
     function landing() {
-        // if (Session::has('customerlogin')) {
-        //     $data = Session::get('data');
-        //     $customer_id = $data[0]->id;
-        //     error_log($customer_id);
-        //     return response()->json(['status' => 'goods']);
-        // } else {
-        //     return response()->json(['status' => 'please log in']);
-        // }
-        return view('catering/index');
+        if (Session::has('customerlogin')) {
+            $data = Session::get('data');
+            $customer_id = $data[0]->id;
+            return view('catering/index')->with('id', $customer_id);
+        } 
+        return view('catering/index')->with('auth_msg', true);
     }
     function event_form() {
         return view('catering/event_form');
@@ -131,7 +129,9 @@ class CateringController extends Controller
             $cd->save();
 
             $c->catering_detail_id = $cd->id;
-            $c->customer_id = 0; // change later
+            $data = Session::get('data');
+            $customer_id = $data[0]->id;
+            $c->customer_id = $customer_id; 
             $c->total_price = $total_price;
             $c->total_payments = 0;
             $c->catering_status = 'pending';
@@ -144,4 +144,27 @@ class CateringController extends Controller
             return redirect('catering/event_form')->with('msg','Please Complete All Data Required');
         }
     }
+
+    function reservation() {
+        $data = Session::get('data');
+        $customer_id = $data[0]->id;
+        $caterings = Catering::where('customer_id', $customer_id)->get();
+
+        $r = [];
+        foreach($caterings as $c) {
+            $cd = CateringDetail::find($c->catering_detail_id);
+            $t = new stdClass();
+            $t->total_price = $c->total_price;
+            $t->total_payments = $c->total_payments;
+            $t->catering_status = $c->catering_status;
+            $t->package_id = $cd->package_id;
+            $t->event_datetime = $cd->event_datetime;
+            $t->event_address = $cd->event_address;
+            $t->event_city = $cd->event_city;
+            $t->event_town = $cd->event_town;
+            array_push($r, $t);
+        }
+        return view('catering/reservation')->with('reserv', $r);
+    }
+
 }

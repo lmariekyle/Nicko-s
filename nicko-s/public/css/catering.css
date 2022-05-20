@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -445,4 +446,46 @@ input[type="datetime-local"] {
 .gcash-img {
     width: 150px;
     margin-top: 1rem;
+}
+
+/* View Reservations */
+.reserv {
+    background: white;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    font-family: 'Sawarabi Mincho', serif;
+    margin-top: 1rem;
+}
+.reserv .column {
+    display: flex;
+    flex-direction: column;
+}
+.column span:first-child {
+    font-weight: bold;
+}
+#contact_admin {
+    background: #8893F2;
+    padding: 1rem;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Sawarabi Mincho', serif;
+}
+#contact_admin span {
+    color: white;
+}
+span.arrow {
+    font-size: 1.5rem;
+    margin-right: 0.2rem;
+    display: inline-block;
+    margin-top: 2px;
+}
+#reservation_link {
+    margin-left: 80%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Sawarabi Mincho', serif;
 }

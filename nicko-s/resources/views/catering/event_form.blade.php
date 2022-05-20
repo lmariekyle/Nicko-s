@@ -12,6 +12,12 @@
 <body>
     <div class="container">
         <main>
+            <div class="back">
+                <a href="{{url('/catering')}}">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back</span>
+                </a>
+            </div>
             <form method="POST" action="/catering/event_form_post/"  id="event-form">
                 @csrf
                 <h1 class="title">Tell us about your Event</h1>
