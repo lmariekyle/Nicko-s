@@ -10,6 +10,8 @@
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href="/css/edit_profile.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <title>CustomerDashboard</title>
     <?php  
@@ -107,11 +109,23 @@
                             <h2>Current Password</h2>
                             <input required type="password" name="current" id="current">
                         
-                            <h2><span class="text-danger">New Password</h2>
-                            <input type="password" name="password" id="password" class="form-control form-control-user @error('password') is-invalid @enderror">
+                            <button type="button" name="c_pass" id="c_pass">Change Password</button>
+
+                            <div id="appear">
+                                <div>
+                                    <h2><span class="text-danger">New Password</h2>
+                                    <input type="password" name="password" id="password" class="form-control form-control-user @error('password') is-invalid @enderror">
                             
-                            <h2><span class="text-danger">Confirm Password</h2>
-                            <input  type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-user @error('password') is-invalid @enderror">
+                                </div>
+
+                                <div>
+                                    <h2><span class="text-danger">Confirm Password</h2>
+                                    <input  type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-user @error('password') is-invalid @enderror">
+                                </div>
+
+                                <button type="button" name="close" id="close">Close</button>
+                            </div>
+                            
                             
 
                         <h1>Edit My Address</h1>
@@ -157,4 +171,29 @@
     </div>
  
 </body>
+
+
+<script type="text/javascript">
+    $("#c_pass").click(
+        function(){
+            $("#appear").show();
+        }
+    );
+
+    $("#close").click(
+        function(){
+            $("#appear").hide();
+            document.getElementById("password").value="";
+            document.getElementById("password_confirmation").value="";
+        }
+    );
+
+
+    
+
+</script>
+
+
+
+
 </html>
