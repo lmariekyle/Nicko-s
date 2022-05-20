@@ -9,15 +9,18 @@
 body {
 	font-family: 'Lato', sans-serif;
 }
-a {
-    text-decoration: none;
+a, u {
+    text-decoration: none !important;
+    color: black;
+}
+a:hover {
     color: black;
 }
 .text-danger {
     color: red;
     font-style: italic;
 }
-.container {
+.mycontainer {
     height: 100vh;
     position: relative;
     background: #FCBF49;
@@ -133,8 +136,6 @@ main .button:hover {
 .mt-6 {
     margin-top: 6rem;
 }
-
-/* Event Form */
 
 /* event-type */
 form#event-form{
@@ -264,8 +265,9 @@ input[type="datetime-local"] {
 .next {
     position: fixed;
     bottom: 10%;
-    right: 20%;
+    right: 25%;
     cursor: pointer;
+    
 }
 .next button {
     background: 0;
@@ -273,17 +275,10 @@ input[type="datetime-local"] {
     cursor: pointer;
 }
 .back {
-    position: fixed;
-    top: 13%;
-    left: 20%;
-    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 }
-.next:hover, .back:hover {
-    transform: scale(1.1);
-    transition: all 0.3s linear;
-}
-
-
 /* Choose Package */
 #selections p {
     font-size: .8rem;
@@ -458,6 +453,10 @@ input[type="datetime-local"] {
     font-family: 'Sawarabi Mincho', serif;
     margin-top: 1rem;
 }
+.reserv h1 {
+    font-size: 1.7rem;
+    line-height: 3rem;
+}
 .reserv .column {
     display: flex;
     flex-direction: column;
@@ -483,9 +482,16 @@ span.arrow {
     margin-top: 2px;
 }
 #reservation_link {
-    margin-left: 80%;
+    position: absolute;
+    left:75%;
     font-size: 1.2rem;
     cursor: pointer;
-    text-decoration: underline;
     font-family: 'Sawarabi Mincho', serif;
+}
+/* breadcrumb */
+.breadcrumb {
+    background: none;
+}
+ol.breadcrumb li {
+    cursor: pointer;
 }

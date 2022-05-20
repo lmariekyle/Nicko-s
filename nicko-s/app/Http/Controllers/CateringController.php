@@ -138,7 +138,7 @@ class CateringController extends Controller
             $c->save();
 
             Cache::flush();
-            return redirect('/');
+            return redirect('catering/reservation');
         } else {
             Cache::flush();
             return redirect('catering/event_form')->with('msg','Please Complete All Data Required');
