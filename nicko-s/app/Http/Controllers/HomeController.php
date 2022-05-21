@@ -12,7 +12,7 @@ class HomeController extends Controller
     // Home Page
     function home(){
         $content =AdminHomePage::where('publish_status','on')->get();
-        $food =Food::all();
+        $food =Food::inRandomOrder()->take(3)->get();;
         return view('home',['content'=>$content,'food'=>$food]);
     }
 

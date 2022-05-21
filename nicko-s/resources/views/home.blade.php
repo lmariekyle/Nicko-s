@@ -5,8 +5,9 @@
         <link href="/css/home.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Forum&family=Open+Sans&family=Quicksand:wght@300&family=Satisfy&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
         <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
         @if (Session::has('customerlogin'))
@@ -66,11 +67,38 @@
         </div>
     </body>
 
-    <div class="featured-container-foods">
+    <div class="featured-container2">
+        <div class="featured-header">
         @foreach($content as $cnt)
-            <h1>{{$cnt->FeaturedFoodHeader}}</h1>
-            <h3>{{$cnt->FeaturedFoodSubText}}</h3>
+            <h1 class="fh-txt1">{{$cnt->FeaturedFoodHeader}}</h1>
+            <h3 class="fh-txt2">{{$cnt->FeaturedFoodSubText}}</h3>
         @endforeach
+        </div>
+        <div class="featured-food">
+        @foreach($food as $f)
+            <div class="featured-food-box">
+                <img src="{{asset('public/img/'.$f->image)}}" class="food-img">
+                <h1 class="featured-food-name">{{$f->Name}}</h1>
+                <p class="featured-food-desc">PHP {{$f->Price}} Tray</p>
+                <a href="{{url('viewfood/'.$f->Name)}}" class="food-view">View</a>
+            </div>
+        @endforeach
+        </div>
+
+        <div class="featured-catering-header">
+        @foreach($content as $cnt)
+            <div class="ct-htxt-box">
+            <h1 class="ct-htxt">{{$cnt->CateringTextHeader}}</h1>
+            </div>
+            <div class="ct-stxt-box">
+            <h3 class="ct-stxt">{{$cnt->CateringSubText}}</h3>
+            </div>
+            <img src="{{asset('public/img/'.$cnt->CateringImage)}}" class="catering-food-img">
+            <a href="{{url('catering')}}" class="ct-btn">Book us Now</a>
+        @endforeach
+        </div>
+
+
     </div>
     </body>
 </html>

@@ -26,6 +26,10 @@ nav {
     padding-right: 12%;
 }
 
+#appear{
+    display: none;
+}
+
 .logo {
     position: absolute;
     left: 42.56%;
@@ -121,8 +125,34 @@ img{
     border: 1px solid #e8c02fdd;
     color: rgb(81, 80, 80);
     font-weight: bold;
-    
-    
+      
+}
+
+.alert{
+    text-align: center;
+    color:green;
+}
+
+#c_pass{
+        margin-left: 35%;
+        margin-top: 5%;
+        width: 150px;
+        background-color: #e7d180dd;
+        padding: 4px ;
+        border: 1px solid #e8c02fdd;
+        color: rgb(81, 80, 80);
+        font-weight: bold;      
+}
+
+#close{
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 90px;
+    background-color: #e7d180dd;
+    padding: 4px ;
+    border: 1px solid #e8c02fdd;
+    color: rgb(81, 80, 80);
+    font-weight: bold;      
 }
 
 th{
@@ -185,6 +215,8 @@ input{
     outline: none;
     display: inline-block;
 }
+
+
 
 
 
