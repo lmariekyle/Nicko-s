@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Pending Orders</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Completed Orders</h6>
         </div>
         <div class="card-body">
         @if(Session::has('success'))
@@ -25,7 +25,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($pending as $r)
+                        @forelse($completed as $r)
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
                                 <td>Package {{$r->package_id}}</td>
@@ -34,10 +34,7 @@
                                 <td>{{$r->total_price}}</td>
                                 <td>{{$r->total_payments}}</td>
                                 <td>
-                                    <a href="{{url('admin/catering/payment/'.$r->id)}}" type="button" class="btn btn-primary">Add Payment</a>
-                                    <a href="{{url('admin/catering/'.$r->id)}}" type="button" class="btn btn-secondary">Details</a>
-                                    <a href="{{url('admin/catering/approve/'.$r->id)}}" type="button" class="btn btn-success">Approve</a>
-                                    <a href="{{url('admin/catering/cancel/'.$r->id)}}" type="button" class="btn btn-danger">Cancel</a>
+                                    <a href="{{url('admin/catering/'.$r->id)}}" type="button" class="btn btn-secondary">More Details</a>
                                 </td>
                             </tr>
                         @empty
@@ -50,7 +47,7 @@
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Approved Orders</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Cancelled Orders</h6>
         </div>
         <div class="card-body">
         @if(Session::has('success'))
@@ -70,7 +67,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($approved as $r)
+                        @forelse($cancelled as $r)
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
                                 <td>Package {{$r->package_id}}</td>
@@ -79,10 +76,7 @@
                                 <td>{{$r->total_price}}</td>
                                 <td>{{$r->total_payments}}</td>
                                 <td>
-                                    <a href="{{url('admin/catering/payment/'.$r->id)}}" type="button" class="btn btn-primary">Add Payment</a>
-                                    <a href="{{url('admin/catering/'.$r->id)}}" type="button" class="btn btn-secondary">Details</a>
-                                    <a href="{{url('admin/catering/complete/'.$r->id)}}" type="button" class="btn btn-success">Complete</a>
-                                    <a href="{{url('admin/catering/cancel/'.$r->id)}}" type="button" class="btn btn-danger">Cancel</a>
+                                    <a href="{{url('admin/catering/'.$r->id)}}" type="button" class="btn btn-secondary">More Details</a>
                                 </td>
                             </tr>
                         @empty
@@ -94,8 +88,6 @@
         </div>
     </div>
 </div>
-
-
 @section('scripts')
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">

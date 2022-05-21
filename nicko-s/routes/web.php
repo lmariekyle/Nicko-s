@@ -117,4 +117,10 @@ Route::get('catering/payment', [CateringController::class, 'payment']);
 Route::get('catering/reservation', [CateringController::class, 'reservation']);
 
 // Admin Catering
+Route::get('admin/catering/history',[ AdminCateringController::class, 'history']);
+Route::put('admin/catering/payment/{id}',[ AdminCateringController::class, 'payment_put']);
+Route::get('admin/catering/payment/{id}',[ AdminCateringController::class, 'payment_get']);
+Route::get('admin/catering/complete/{id}',[ AdminCateringController::class, 'complete']);
+Route::get('admin/catering/cancel/{id}',[ AdminCateringController::class, 'cancel']);
+Route::get('admin/catering/approve/{id}',[ AdminCateringController::class, 'approve']);
 Route::resource('admin/catering', AdminCateringController::class);
