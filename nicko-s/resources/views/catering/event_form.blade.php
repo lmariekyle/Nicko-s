@@ -55,18 +55,25 @@
 
         
         <div class="event-venue">
-            <h2>Venue Address:</h2><br>
-            <input type="text" id="address" name="address" placeholder="Sitio Nasipit" required>
-            <label for="address">Address</label> <br><br>
-
-            <input type="text" id="city" name="city" placeholder="cebu" required> 
-            <label for="city">City</label>
-
-            <input type="text" id="Town" name="Town" placeholder="talamban" required>
-            <label for="Town">Municipality/Town</label>
-
-            <input type="text" id="zip" name="zip" placeholder="6000" required>
-            <label for="zip">Zip Code</label>
+            <h2>Venue Address:</h2>
+            <div class="ven-group-cont">
+                <div class="ven-group">
+                    <input type="text" id="address" name="address" placeholder="Sitio Nasipit" required>
+                    <label for="address">Address</label>
+                </div>
+                <div class="ven-group">
+                    <input type="text" id="city" name="city" placeholder="cebu" required> 
+                    <label for="city">City</label>
+                </div>
+                <div class="ven-group">
+                    <input type="text" id="Town" name="Town" placeholder="talamban" required>
+                    <label for="Town">Town</label>
+                </div>
+                <div class="ven-group">
+                    <input type="text" id="zip" name="zip" placeholder="6000" required>
+                    <label for="zip">Zip Code</label>
+                </div>
+            </div>
         </div>
         <div class="next button">
             <button type="submit">  
