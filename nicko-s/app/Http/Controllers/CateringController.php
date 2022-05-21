@@ -35,7 +35,7 @@ class CateringController extends Controller
         if ($today > $user_date) {
             return redirect('catering/event_form')->with('msg','Please select correct date(Past Date Selected)');
         } else if ($today == $user_date){
-            return redirect('catering/event_form')->with('msg','Cannot make Catering Reservation on the same date');
+            return redirect('catering/event_form')->with('msg','Cannot make Catering Reservation on the same day');
         }
 
         // query from db, insert sorted, ascending

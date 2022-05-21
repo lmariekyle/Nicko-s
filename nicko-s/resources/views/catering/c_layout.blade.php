@@ -16,7 +16,7 @@
     @if(isset($auth_msg) )
         <script>
             alert("please log in");
-            window.href = "/";
+            window.location.href = "/";
         </script>
     @endif
 

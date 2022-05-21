@@ -13,6 +13,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\AdminHomePageController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminCateringController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,7 +99,7 @@ Route::get('admin/homepage/{id}/delete',[AdminHomePageController::class,'destroy
 Route::resource('admin/homepage',AdminHomePageController::class);
 
 
-// Catering Routes
+// Catering
 Route::get('catering', [CateringController::class, 'landing']);
 
 Route::post('catering/event_form_post', [CateringController::class, 'event_form_post']);
@@ -115,6 +116,5 @@ Route::get('catering/catering_done', [CateringController::class, 'catering_done'
 Route::get('catering/payment', [CateringController::class, 'payment']);
 Route::get('catering/reservation', [CateringController::class, 'reservation']);
 
-
-
-
+// Admin Catering
+Route::resource('admin/catering', AdminCateringController::class);

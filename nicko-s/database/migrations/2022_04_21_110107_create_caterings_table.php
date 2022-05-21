@@ -19,7 +19,7 @@ class CreateCateringsTable extends Migration
             $table->foreignId('customer_id');
             $table->integer('total_price');
             $table->integer('total_payments');
-            $table->enum('catering_status', ['pending', 'approved', 'rejected', 'success', 'failed']);
+            $table->enum('catering_status', ['pending', 'approved', 'cancelled', 'completed']);
             $table->timestamps();
         });
     }

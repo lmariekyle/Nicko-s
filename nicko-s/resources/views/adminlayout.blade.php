@@ -108,6 +108,19 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link @if(!request()->is('admin/admincatering*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#cateringMaster"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-solid fa-utensils"></i>
+                    <span>Catering Orders</span>
+                </a>
+                <div id="cateringMaster" class="collapse @if(request()->is('admin/admincatering*')) show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{url('admin/catering')}}">View</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link @if(!request()->is('admin/homepage*')) collapsed @endif" href="#" data-toggle="collapse" data-target="#homepageMaster"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-home"></i>
