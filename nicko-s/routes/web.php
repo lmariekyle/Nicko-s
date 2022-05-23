@@ -13,7 +13,9 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\AdminHomePageController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FoodOrderController;
 use App\Http\Controllers\AdminCateringController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +77,12 @@ Route::resource('admin/foodcategory',FoodCategoryController::class);
 Route::get('admin/food/{id}/delete',[FoodController::class,'destroy']);
 Route::resource('admin/food',FoodController::class);
 Route::resource('admin/customer',CustomerController::class);
+
+//Admin Food Order Route
+Route::get('orders',[FoodOrderController::class,'index']);
+Route::get('admin/view-order/{id}',[FoodOrderController::class,'view']);
+Route::put('update-order/{id}',[FoodOrderController::class,'updateorder']);
+Route::get('order-history',[FoodOrderController::class,'orderhistory']);
 
 //Customer
 Route::get('login',[CustomerController::class,'login']);
