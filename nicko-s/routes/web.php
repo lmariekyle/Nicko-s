@@ -14,6 +14,8 @@ use App\Http\Controllers\AdminHomePageController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FoodOrderController;
+use App\Http\Controllers\AdminCateringController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +83,6 @@ Route::get('orders',[FoodOrderController::class,'index']);
 Route::get('admin/view-order/{id}',[FoodOrderController::class,'view']);
 Route::put('update-order/{id}',[FoodOrderController::class,'updateorder']);
 Route::get('order-history',[FoodOrderController::class,'orderhistory']);
-Route::get('admin/foodorder/{id}/delete',[FoodOrderController::class,'destroy']);
 
 //Customer
 Route::get('login',[CustomerController::class,'login']);
@@ -106,7 +107,7 @@ Route::get('admin/homepage/{id}/delete',[AdminHomePageController::class,'destroy
 Route::resource('admin/homepage',AdminHomePageController::class);
 
 
-// Catering Routes
+// Catering
 Route::get('catering', [CateringController::class, 'landing']);
 
 Route::post('catering/event_form_post', [CateringController::class, 'event_form_post']);
@@ -120,6 +121,14 @@ Route::get('catering/package_detail', [CateringController::class, 'package_detai
 Route::get('catering/summary', [CateringController::class, 'summary']);
 Route::get('catering/catering_done', [CateringController::class, 'catering_done']);
 
+Route::get('catering/payment', [CateringController::class, 'payment']);
+Route::get('catering/reservation', [CateringController::class, 'reservation']);
 
-
-
+// Admin Catering
+Route::get('admin/catering/history',[ AdminCateringController::class, 'history']);
+Route::put('admin/catering/payment/{id}',[ AdminCateringController::class, 'payment_put']);
+Route::get('admin/catering/payment/{id}',[ AdminCateringController::class, 'payment_get']);
+Route::get('admin/catering/complete/{id}',[ AdminCateringController::class, 'complete']);
+Route::get('admin/catering/cancel/{id}',[ AdminCateringController::class, 'cancel']);
+Route::get('admin/catering/approve/{id}',[ AdminCateringController::class, 'approve']);
+Route::resource('admin/catering', AdminCateringController::class);
