@@ -14,6 +14,7 @@ use App\Http\Controllers\AdminHomePageController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AdminCateringController;
+use App\Http\Controllers\AdminCustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,3 +125,7 @@ Route::get('admin/catering/complete/{id}',[ AdminCateringController::class, 'com
 Route::get('admin/catering/cancel/{id}',[ AdminCateringController::class, 'cancel']);
 Route::get('admin/catering/approve/{id}',[ AdminCateringController::class, 'approve']);
 Route::resource('admin/catering', AdminCateringController::class);
+
+// Admin Customer
+Route::get('admin/customers/{id}/delete', [AdminCustomerController::class, 'destroy']);
+Route::resource('admin/customers', AdminCustomerController::class);
