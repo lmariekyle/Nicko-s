@@ -60,6 +60,7 @@ class CustomerDashboard extends Controller
         $data->street_name=$request->street_name;
         $data->house_number=$request->house_number;
         $data->zip_code=$request->zip_code;
+        $data->testimonial=$request->testimonial;
 
         session(['customerlogin'=>true,'data'=>$data]);
         $data->save();

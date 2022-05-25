@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\FoodCategory;
 use App\Models\Food;
 use App\Models\AdminHomePage;
+use App\Models\customers;
 
 class HomeController extends Controller
 {
@@ -13,9 +14,15 @@ class HomeController extends Controller
     function home(){
         $content =AdminHomePage::where('publish_status','on')->get();
         $food =Food::inRandomOrder()->take(3)->get();;
-        return view('home',['content'=>$content,'food'=>$food]);
+        $customers =customers::where('feature_testimonial','1')->get();
+        return view('home',['content'=>$content,'food'=>$food, 'customers'=>$customers]);
     }
 
+    function aboutus(){
+
+      return view('aboutus');
+
+    }
 
     public function menu(){
         $category =FoodCategory::get();

@@ -216,7 +216,15 @@ input{
     display: inline-block;
 }
 
+#testimonial {
 
+  display: block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 350px;
+  height: 100px;
+  resize: none;
 
-
-
+}

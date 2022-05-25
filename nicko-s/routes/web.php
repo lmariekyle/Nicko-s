@@ -30,6 +30,8 @@ use App\Http\Controllers\AdminCustomerController;
 //Website Routes
 Route::get('/',[HomeController::class,'home']);
 
+Route::get('aboutus',[HomeController::class,'aboutus']);
+
 //Food Menu Routes
 Route::get('menu',[HomeController::class,'menu']);
 Route::get('viewcategory/{CategoryName}',[HomeController::class, 'viewcategory']);
@@ -56,7 +58,7 @@ Route::get('admin/logout',[AdminController::class,'logout']);
 
 //Forgot password routes
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
@@ -127,5 +129,8 @@ Route::get('admin/catering/approve/{id}',[ AdminCateringController::class, 'appr
 Route::resource('admin/catering', AdminCateringController::class);
 
 // Admin Customer
+Route::get('admin/customers/testimonials',[AdminCustomerController::class, 'testimonials']);
+Route::put('admin/customers/feature/{id}',[AdminCustomerController::class, 'feature']);
+Route::put('admin/customers/unfeature/{id}',[AdminCustomerController::class, 'unfeature']);
 Route::get('admin/customers/{id}/delete', [AdminCustomerController::class, 'destroy']);
 Route::resource('admin/customers', AdminCustomerController::class);

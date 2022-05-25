@@ -18,6 +18,30 @@ class AdminCustomerController extends Controller
       return view('customers.index', ['data'=>$data]);
     }
 
+    public function testimonials()
+    {
+      $dataT=customers::whereNotNull('testimonial')->get();;
+      return view('customers.testimonials', ['dataT'=>$dataT]);
+    }
+
+    public function feature($id)
+    {
+      $customer = customers::find($id);
+      $customer->feature_testimonial = 1;
+      $customer->update();
+
+      return redirect('admin/customers/testimonials');
+    }
+
+    public function unfeature($id)
+    {
+      $customer = customers::find($id);
+      $customer->feature_testimonial = 0;
+      $customer->update();
+
+      return redirect('admin/customers/testimonials');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -56,10 +80,7 @@ class AdminCustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.
@@ -68,10 +89,7 @@ class AdminCustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -84,4 +102,5 @@ class AdminCustomerController extends Controller
         customers::where('id',$id)->delete();
         return redirect('admin/customers/')->with('success','User has been deleted.');
     }
+
 }

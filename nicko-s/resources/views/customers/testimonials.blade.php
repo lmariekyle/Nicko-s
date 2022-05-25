@@ -1,6 +1,30 @@
 @extends('adminlayout')
 @section('content')
 
+<style>
+
+.feature {
+
+  background-color: #4e73df;
+  border: none;
+  color: white;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: .2rem;
+
+}
+
+.unfeature {
+
+  background-color: #e74a3b;
+  border: none;
+  color: white;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: .2rem;
+
+}
+
+</style>
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -23,9 +47,7 @@
                                           <th>#</th>
                                           <th>Avatar</th>
                                           <th>Name</th>
-                                          <th>Phone Number</th>
-                                          <th>Email Address</th>
-                                          <th>Address</th>
+                                          <th>Testimonial</th>
                                           <th>Action</th>
                                         </tr>
                                     </thead>
@@ -34,24 +56,30 @@
                                           <th>#</th>
                                           <th>Avatar</th>
                                           <th>Name</th>
-                                          <th>Phone Number</th>
-                                          <th>Email Address</th>
-                                          <th>Address</th>
+                                          <th>Testimonial</th>
                                           <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @if($data)
-                                        @foreach($data as $d)
+                                        @if($dataT)
+                                        @foreach($dataT as $d)
                                         <tr>
                                           <td>{{$d->id}}</td>
                                           <td><img src="{{asset('img/'.$d->image)}}" width="50" height="50"></td>
                                           <td>{{$d->firstname}} {{$d->middlename}} {{$d->lastname}}</td>
-                                          <td>{{$d->phone}}</td>
-                                          <td>{{$d->email}}</td>
-                                          <td>{{$d->province}} {{$d->city}} {{$d->barangay}} {{$d->municipality}} {{$d->zip_code}} {{$d->house_number}}</td>
+                                          <td>{{$d->testimonial}}</td>
                                           <td>
-                                            <a onclick="return confirm('Are you sure you want to delete this user?')" href="{{url('admin/customers/'.$d->id).'/delete'}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                            <form method="POST" action="{{url('admin/customers/feature/'.$d->id).''}}">
+                                              @csrf
+                                              @method('PUT')
+                                              <button type="submit" class = "feature" <?php echo($d->feature_testimonial == 1 ? "hidden" : "") ?>>Feature</button>
+                                            </form>
+
+                                            <form method="POST" action="{{url('admin/customers/unfeature/'.$d->id).''}}" >
+                                              @csrf
+                                              @method('PUT')
+                                              <button type="submit" class = "unfeature" <?php echo($d->feature_testimonial == 0 ? "hidden" : "") ?>>Unfeature</button>
+                                            </form>
                                           </td>
                                         </tr>
                                         @endforeach
