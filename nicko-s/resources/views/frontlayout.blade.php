@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
         <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-           
+
         @if (Session::has('customerlogin'))
         <?php $data = session()->get('data')[0]; ?>
         @endif
@@ -23,8 +23,8 @@
                     <h2 class="logo">Nicko's</h2>
                     <h2 class="logo-1">Kitchen</h2>
                 <ul>
-                    <li><a href="#">OUR STORY</a></li>
-                   
+                    <li><a href="{{url('aboutus')}}">ABOUT US</a></li>
+
                     @if(Session::has('customerlogin'))
                     <li><a href="{{url('logout')}}">LOGOUT</a></li>
                     <li><a  href="{{url('profile')}}">
@@ -34,7 +34,7 @@
                     <li><a href="#">CONTACT</a></li>
                     <li><a href="{{url('login')}}">LOGIN</a></li>
                     @endif
-                   
+
 
                 </ul>
             </nav>
@@ -43,7 +43,7 @@
     <main>
         @yield('content')
     </main>
-       
+
     </body>
 
 

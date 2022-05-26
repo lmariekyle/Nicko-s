@@ -10,16 +10,16 @@
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href="/css/customer_profile.css" rel="stylesheet">
-    
+
     <title>CustomerDashboard</title>
-    <?php 
-        session_start(); 
-        $data = session()->get('data'); 
+    <?php
+        session_start();
+        $data = session()->get('data');
         if(!array_key_exists('image', $data->toArray())) {
-            $data = session()->get('data')[0]; 
+            $data = session()->get('data')[0];
         }
     ?>
-   
+
 
 
 
@@ -38,7 +38,7 @@
                         <h2 class="logo">Nicko's</h2>
                         <h2 class="logo-1">Kitchen</h2>
                     <ul>
-                        <li><a href="#">OUR STORY</a></li>      
+                        <li><a href="{{url('aboutus')}}">ABOUT US</a></li>
                         @if (Session::has('customerlogin'))
                         <li><a href="{{url('logout')}}">LOGOUT</a></li>
                         <li><a  href="{{url('profile')}}">
@@ -51,7 +51,7 @@
                     </ul>
                 </nav>
             </div>
-    
+
 
     <h3 class="p-1 mb-4">Profile</h3>
         <div class="table-responsive">
@@ -65,7 +65,7 @@
                         <h5 class="upload_prof_img">Upload Profile Image</h5>
                         <input type="file" class="btn1 btn-block" name="image" class="b-1"/>
                         <input type="hidden" name="_token" value="{{csrf_token()}}" class="b-1">
-                        <input type="submit" class="btn1 btn-block" class="b-1"/>    
+                        <input type="submit" class="btn1 btn-block" class="b-1"/>
                     </form>
             </div>
 
@@ -80,7 +80,7 @@
                     <div class="userdetails">
                     <h1>Personal Information</h1>
 
-                    
+
 
                         <h2>First Name</h2>
                         <span class="data">{{$data->firstname}}</span>
@@ -104,6 +104,11 @@
                             <span class="address_data">{{$data->house_number}} {{$data->street_name}} {{$data->barangay}} {{$data->municipality}} {{$data->city}} {{$data->zip_code}}</span>
                         </div>
 
+                        <h1>Testimonial</h1>
+                        <div class="container-3">
+                            <span class="testimonial_data">{{$data->testimonial}}</span>
+                        </div>
+
                         <div class="editbutton">
                             <input type="hidden" name="ref" value="front"/>
                             <input type="submit" class="btn01 btn-block" value="Edit Profile"/>
@@ -111,11 +116,11 @@
 
                     </div>
                 </div>
-                    
+
                 </form>
-        
-        
-        </div>           
-    </div>  
+
+
+        </div>
+    </div>
 </body>
 </html>

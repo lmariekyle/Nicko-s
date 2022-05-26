@@ -324,6 +324,27 @@ nav ul li a:hover {
     align-self: flex-end;
 }
 
+.featured-testimonials {
+
+  margin-top: 50px;
+  display: absolute;
+  left: -50%;
+  font-family: 'Quicksand', sans-sans-serif;
+
+}
+
+.featured-testimonials h1 {
+
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Alfa Slab One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80px;
+  color: #BC6C25;
+
+}
+
 .catering-food-img {
     position: absolute;
     left: 55.73%;
@@ -398,4 +419,84 @@ nav ul li a:hover {
     box-shadow: 0px 8px 8px rgba(142, 110, 37, 0.895);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.t-c {
+
+ padding: 15px;
+ display: flex;
+ flex-wrap: nowrap;
+ overflow-x: scroll;
+ width: 40%;
+ margin-right: 30%;
+ margin-left: 30%;
+ scroll-snap-type: x mandatory;
+
+
+}
+
+.t-c-card {
+
+  scroll-snap-align: center;
+
+  flex: 0 0 auto;
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: -1px 3px 17px 4px rgba(0,0,0,0.1);
+  margin-right: 30px;
+  margin-bottom: 15px;
+  background-color: white;
+  overflow-y: hidden;
+
+}
+
+.t-c-card img{
+
+  float: left;
+  height: 150px;
+  width: 150px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+}
+
+.t-c-card h2 {
+
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 160px;
+  font-weight: 600;
+
+}
+.t-c-card p {
+
+  font-size: 18px;
+  margin-left: 170px;
+  padding-top: 2.5px;
+  padding-right: 25px;
+  text-align: justify;
+
+
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  border: 1px solid #d5d5d5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

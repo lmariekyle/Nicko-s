@@ -183,6 +183,16 @@ h2{
     font-weight: bold;
 }
 
+.testimonial_data{
+
+  line-height: 1.0em;
+  border: none;
+  font-weight: bold;
+  margin:0;
+  padding: 20px;
+
+}
+
 span{
     border: 0;
     border-bottom: 1px solid #FCBF49;

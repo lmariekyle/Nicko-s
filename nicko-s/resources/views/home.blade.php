@@ -1,4 +1,5 @@
 <html>
+
     <head>
         <meta charset="utf-8">
         <title>Home Page</title>
@@ -36,7 +37,7 @@
                     <h2 class="logo">Nicko's</h2>
                     <h2 class="logo-1">Kitchen</h2>
                 <ul>
-                    <li><a href="#">OUR STORY</a></li>      
+                    <li><a href="{{url('aboutus')}}">ABOUT US</a></li>
                     @if (Session::has('customerlogin'))
                     <li><a href="{{url('logout')}}">LOGOUT</a></li>
                     <li><a  href="{{url('profile')}}">
@@ -98,7 +99,27 @@
         @endforeach
         </div>
 
+        <div class="featured-testimonials">
+
+          <h1>Testimonials</h1>
+
+          <div class = "t-c" id = "testimonialsContainers">
+
+            @foreach($customers as $d)
+            <div class = "t-c-card">
+                <img src="{{asset('img/'.$d->image)}}">
+                <h2>{{$d->firstname}} {{$d->lastname}}</h2>
+                <p>{{$d->testimonial}}</p>
+            </div>
+            @endforeach
+
+          </div>
+
+
+        </div>
 
     </div>
+
     </body>
+
 </html>
